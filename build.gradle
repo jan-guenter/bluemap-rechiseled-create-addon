@@ -1,0 +1,359 @@
+// SPDX-License-Identifier: MIT
+
+plugins {
+    id 'java-library'
+    id 'checkstyle'
+    id 'maven-publish'
+}
+
+group = addon_group
+version = addon_version
+
+base {
+    archivesName = artifact_id
+}
+
+java {
+    toolchain.languageVersion = JavaLanguageVersion.of(21)
+    withSourcesJar()
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        url = uri('https://repo.bluecolored.de/releases')
+        content { includeGroupByRegex('de\\.bluecolored.*') }
+    }
+}
+
+dependencies {
+    compileOnly "de.bluecolored:bluemap-core:${bluemap_version}"
+    compileOnly 'org.jetbrains:annotations:23.0.0'
+
+    testImplementation "de.bluecolored:bluemap-core:${bluemap_version}"
+    testImplementation 'org.jetbrains:annotations:23.0.0'
+    testImplementation platform('org.junit:junit-bom:5.11.4')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.release = 21
+    options.compilerArgs.addAll(['-Xlint:all', '-Werror'])
+}
+
+tasks.withType(AbstractArchiveTask).configureEach {
+    preserveFileTimestamps = false
+    reproducibleFileOrder = true
+}
+
+tasks.named('test', Test).configure {
+    useJUnitPlatform()
+    def bridgeJar = providers.gradleProperty('bridgeJar')
+    def rechiseledJar = providers.gradleProperty('rechiseledJar')
+    def fusionJar = providers.gradleProperty('fusionJar')
+    def createJar = providers.gradleProperty('createJar')
+    if (bridgeJar.isPresent()) {
+        systemProperty 'bridgeJar', bridgeJar.get()
+    }
+    if (rechiseledJar.isPresent()) {
+        systemProperty 'rechiseledJar', rechiseledJar.get()
+    }
+    if (fusionJar.isPresent()) {
+        systemProperty 'fusionJar', fusionJar.get()
+    }
+    if (createJar.isPresent()) {
+        systemProperty 'createJar', createJar.get()
+    }
+}
+
+tasks.named('processResources').configure {
+    inputs.property('version', project.version)
+    filesMatching('bluemap.addon.json') {
+        expand(version: project.version)
+    }
+}
+
+checkstyle {
+    toolVersion = '10.18.2'
+    configFile = file('config/checkstyle/checkstyle.xml')
+}
+
+tasks.withType(Checkstyle).configureEach {
+    reports {
+        xml.required = true
+        html.required = true
+    }
+}
+
+tasks.named('jar', Jar).configure {
+    manifest {
+        attributes(
+                'Automatic-Module-Name': 'io.github.janguenter.bluemap.rechiseledcreate',
+                'Implementation-Title': addon_name,
+                'Implementation-Version': project.version.toString()
+        )
+    }
+    from('LICENSE') {
+        into 'META-INF'
+        rename { 'LICENSE-bluemap-rechiseled-create-addon' }
+    }
+    from('LICENSE-BlueMap') {
+        into 'META-INF'
+    }
+    from('NOTICE.md') {
+        into 'META-INF'
+        rename { 'NOTICE-bluemap-rechiseled-create-addon.md' }
+    }
+    from('THIRD_PARTY.md') {
+        into 'META-INF'
+        rename { 'THIRD_PARTY-bluemap-rechiseled-create-addon.md' }
+    }
+    from('provenance/upstreams.json') {
+        into 'META-INF/bluemap-rechiseled-create'
+    }
+}
+
+tasks.named('sourcesJar', Jar).configure {
+    from('LICENSE') {
+        into 'META-INF'
+        rename { 'LICENSE-bluemap-rechiseled-create-addon' }
+    }
+    from('LICENSE-BlueMap') {
+        into 'META-INF'
+    }
+    from('NOTICE.md') {
+        into 'META-INF'
+        rename { 'NOTICE-bluemap-rechiseled-create-addon.md' }
+    }
+    from('THIRD_PARTY.md') {
+        into 'META-INF'
+        rename { 'THIRD_PARTY-bluemap-rechiseled-create-addon.md' }
+    }
+    from('provenance/upstreams.json') {
+        into 'META-INF/bluemap-rechiseled-create'
+    }
+}
+
+def productionJar = tasks.named('jar', Jar).flatMap { it.archiveFile }
+def publishedSourcesJar = tasks.named('sourcesJar', Jar).flatMap { it.archiveFile }
+tasks.register('verifyAcceptedProductionJar') {
+    dependsOn tasks.named('jar')
+    inputs.file(productionJar)
+
+    doLast {
+        def jarFile = inputs.files.singleFile
+        def expectedSize = providers.gradleProperty('accepted_jar_size').get().toLong()
+        def expectedSha256 = providers.gradleProperty('accepted_jar_sha256').get()
+        def actualSha256 = java.security.MessageDigest.getInstance('SHA-256')
+                .digest(jarFile.bytes)
+                .encodeHex()
+                .toString()
+
+        if (jarFile.length() != expectedSize) {
+            throw new GradleException(
+                    "Accepted production JAR size mismatch: "
+                            + "${jarFile.length()} != ${expectedSize}"
+            )
+        }
+        if (actualSha256 != expectedSha256) {
+            throw new GradleException(
+                    "Accepted production JAR SHA-256 mismatch: "
+                            + "${actualSha256} != ${expectedSha256}"
+            )
+        }
+    }
+}
+
+tasks.register('verifyProductionJar') {
+    dependsOn tasks.named('jar')
+    inputs.file(productionJar)
+
+    doLast {
+        def jarFile = inputs.files.singleFile
+        def zip = new java.util.zip.ZipFile(jarFile)
+        try {
+            def entries = zip.entries().findAll { !it.directory }.collect { it.name }
+            def required = [
+                    'bluemap.addon.json',
+                    'assets/bluemap_rechiseled_create/blockstates/fusion_model.json',
+                    'bluemap-rechiseled-create/profiles/exact-artifacts.json',
+                    'bluemap-rechiseled-create/profiles/rechiseledcreate/1.1.1-rechiseled-1.2.5-fusion-1.3.12-create-6.0.10/profile.json',
+                    'bluemap-rechiseled-create/profiles/rechiseledcreate/1.1.1-rechiseled-1.2.5-fusion-1.3.12-create-6.0.10/definitions.tsv',
+                    'bluemap-rechiseled-create/profiles/rechiseledcreate/1.1.1-rechiseled-1.2.5-fusion-1.3.12-create-6.0.10/disconnected-definitions.tsv',
+                    'bluemap-rechiseled-create/profiles/rechiseledcreate/1.1.1-rechiseled-1.2.5-fusion-1.3.12-create-6.0.10/required-resources.tsv',
+                    'bluemap-rechiseled-create/profiles/rechiseledcreate/1.1.1-rechiseled-1.2.5-fusion-1.3.12-create-6.0.10/textures.tsv',
+                    'bluemap-rechiseled-create/profiles/rechiseledcreate/1.1.1-rechiseled-1.2.5-fusion-1.3.12-create-6.0.10/host-models.tsv',
+                    'bluemap-rechiseled-create/profiles/rechiseledcreate/1.1.1-rechiseled-1.2.5-fusion-1.3.12-create-6.0.10/mechanical-chisel-resources.tsv',
+                    'bluemap-rechiseled-create/profiles/rechiseledcreate/1.1.1-rechiseled-1.2.5-fusion-1.3.12-create-6.0.10/mechanical-chisel-textures.tsv',
+                    'META-INF/LICENSE-bluemap-rechiseled-create-addon',
+                    'META-INF/LICENSE-BlueMap',
+                    'META-INF/NOTICE-bluemap-rechiseled-create-addon.md',
+                    'META-INF/THIRD_PARTY-bluemap-rechiseled-create-addon.md',
+                    'META-INF/bluemap-rechiseled-create/upstreams.json'
+            ]
+            def missing = required.findAll { !entries.contains(it) }
+            if (!missing.isEmpty()) {
+                throw new GradleException("Production JAR is missing: ${missing}")
+            }
+            def addon = new groovy.json.JsonSlurper().parseText(
+                    zip.getInputStream(zip.getEntry('bluemap.addon.json')).getText('UTF-8')
+            )
+            if (addon.id != addon_id
+                    || addon.entrypoint != 'io.github.janguenter.bluemap.rechiseledcreate.BlueMapRechiseledCreateAddon'
+                    || addon.version != project.version.toString()
+                    || addon.dependencies != []
+                    || addon['soft-dependencies'] != []) {
+                throw new GradleException('BlueMap add-on metadata mismatch')
+            }
+            def forbidden = entries.findAll {
+                it.endsWith('.jar')
+                        || (it.endsWith('.class')
+                        && !it.startsWith('io/github/janguenter/bluemap/rechiseledcreate/'))
+                        || it == 'META-INF/neoforge.mods.toml'
+                        || it == 'fabric.mod.json'
+                        || it.endsWith('.mixins.json')
+                        || it.startsWith('assets/rechiseled/')
+                        || it.startsWith('assets/fusion/')
+                        || (it.startsWith('assets/')
+                        && !it.startsWith('assets/bluemap_rechiseled_create/'))
+                        || it.startsWith('com/supermartijn642/')
+                        || it.startsWith('earth/terrarium/')
+                        || it.startsWith('de/bluecolored/')
+                        || it.startsWith('de/maxhenkel/')
+                        || it.startsWith('net/minecraft/')
+                        || it.startsWith('net/neoforged/')
+            }
+            if (!forbidden.isEmpty()) {
+                throw new GradleException("Production JAR contains forbidden entries: ${forbidden}")
+            }
+        } finally {
+            zip.close()
+        }
+    }
+}
+
+tasks.register('verifySourcesJar') {
+    dependsOn tasks.named('sourcesJar')
+    inputs.file(publishedSourcesJar)
+
+    doLast {
+        def jarFile = inputs.files.singleFile
+        def zip = new java.util.zip.ZipFile(jarFile)
+        try {
+            def entries = zip.entries().findAll { !it.directory }.collect { it.name }
+            def required = [
+                    'io/github/janguenter/bluemap/rechiseledcreate/BlueMapRechiseledCreateAddon.java',
+                    'io/github/janguenter/bluemap/rechiseledcreate/adapter/bluemap522/RechiseledCreateRenderer.java',
+                    'bluemap.addon.json',
+                    'bluemap-rechiseled-create/profiles/exact-artifacts.json',
+                    'bluemap-rechiseled-create/profiles/rechiseledcreate/1.1.1-rechiseled-1.2.5-fusion-1.3.12-create-6.0.10/profile.json',
+                    'bluemap-rechiseled-create/profiles/rechiseledcreate/1.1.1-rechiseled-1.2.5-fusion-1.3.12-create-6.0.10/definitions.tsv',
+                    'bluemap-rechiseled-create/profiles/rechiseledcreate/1.1.1-rechiseled-1.2.5-fusion-1.3.12-create-6.0.10/disconnected-definitions.tsv',
+                    'bluemap-rechiseled-create/profiles/rechiseledcreate/1.1.1-rechiseled-1.2.5-fusion-1.3.12-create-6.0.10/required-resources.tsv',
+                    'bluemap-rechiseled-create/profiles/rechiseledcreate/1.1.1-rechiseled-1.2.5-fusion-1.3.12-create-6.0.10/textures.tsv',
+                    'bluemap-rechiseled-create/profiles/rechiseledcreate/1.1.1-rechiseled-1.2.5-fusion-1.3.12-create-6.0.10/host-models.tsv',
+                    'bluemap-rechiseled-create/profiles/rechiseledcreate/1.1.1-rechiseled-1.2.5-fusion-1.3.12-create-6.0.10/mechanical-chisel-resources.tsv',
+                    'bluemap-rechiseled-create/profiles/rechiseledcreate/1.1.1-rechiseled-1.2.5-fusion-1.3.12-create-6.0.10/mechanical-chisel-textures.tsv',
+                    'META-INF/LICENSE-bluemap-rechiseled-create-addon',
+                    'META-INF/LICENSE-BlueMap',
+                    'META-INF/NOTICE-bluemap-rechiseled-create-addon.md',
+                    'META-INF/THIRD_PARTY-bluemap-rechiseled-create-addon.md',
+                    'META-INF/bluemap-rechiseled-create/upstreams.json'
+            ]
+            def missing = required.findAll { !entries.contains(it) }
+            if (!missing.isEmpty()) {
+                throw new GradleException("Sources JAR is missing: ${missing}")
+            }
+            def projectJava = entries.findAll { it.endsWith('.java') }
+            def foreignJava = projectJava.findAll {
+                !it.startsWith('io/github/janguenter/bluemap/rechiseledcreate/')
+            }
+            def forbidden = entries.findAll {
+                it.endsWith('.class')
+                        || it.endsWith('.jar')
+                        || it.startsWith('assets/rechiseled/')
+                        || it.startsWith('assets/fusion/')
+                        || (it.startsWith('assets/')
+                        && !it.startsWith('assets/bluemap_rechiseled_create/'))
+                        || it.startsWith('com/supermartijn642/')
+                        || it.startsWith('earth/terrarium/')
+                        || it.startsWith('de/bluecolored/')
+                        || it.startsWith('de/maxhenkel/')
+                        || it.startsWith('net/minecraft/')
+                        || it.startsWith('net/neoforged/')
+            }
+            if (projectJava.isEmpty() || !foreignJava.isEmpty() || !forbidden.isEmpty()) {
+                throw new GradleException(
+                        "Sources JAR boundary mismatch: foreignJava=${foreignJava}, "
+                                + "forbidden=${forbidden}"
+                )
+            }
+        } finally {
+            zip.close()
+        }
+    }
+}
+
+tasks.named('check').configure {
+    dependsOn tasks.named('verifyAcceptedProductionJar')
+    dependsOn tasks.named('verifyProductionJar')
+    dependsOn tasks.named('verifySourcesJar')
+}
+
+tasks.register('verifyPinnedArtifacts', Exec) {
+    def bridgeJar = providers.gradleProperty('bridgeJar')
+    def rechiseledJar = providers.gradleProperty('rechiseledJar')
+    def fusionJar = providers.gradleProperty('fusionJar')
+    def createJar = providers.gradleProperty('createJar')
+    doFirst {
+        if (!bridgeJar.isPresent() || !rechiseledJar.isPresent()
+                || !fusionJar.isPresent() || !createJar.isPresent()) {
+            throw new GradleException(
+                    'Set -PbridgeJar, -PrechiseledJar, -PfusionJar, and -PcreateJar '
+                            + 'to the exact ATM 1.2.0 artifacts.'
+            )
+        }
+    }
+    commandLine 'python3', 'tools/verify_pinned_artifacts.py',
+            '--bridge', bridgeJar.getOrElse('missing'),
+            '--rechiseled', rechiseledJar.getOrElse('missing'),
+            '--fusion', fusionJar.getOrElse('missing'),
+            '--create', createJar.getOrElse('missing')
+}
+
+publishing {
+    publications {
+        addon(MavenPublication) {
+            from components.java
+            artifactId = artifact_id
+            pom {
+                name = addon_name
+                description = 'Exact-profile BlueMap rendering for Rechiseled: Create.'
+                url = 'https://github.com/jan-guenter/bluemap-rechiseled-create-addon'
+                licenses {
+                    license {
+                        name = 'MIT License'
+                        url = 'https://spdx.org/licenses/MIT.html'
+                        distribution = 'repo'
+                    }
+                }
+                scm {
+                    url = 'https://github.com/jan-guenter/bluemap-rechiseled-create-addon'
+                    connection = 'scm:git:https://github.com/jan-guenter/bluemap-rechiseled-create-addon.git'
+                }
+            }
+        }
+    }
+    repositories {
+        maven {
+            name = 'GitHubPackages'
+            url = uri('https://maven.pkg.github.com/jan-guenter/bluemap-rechiseled-create-addon')
+            credentials {
+                username = System.getenv('GITHUB_ACTOR')
+                password = System.getenv('GITHUB_TOKEN')
+            }
+        }
+    }
+}

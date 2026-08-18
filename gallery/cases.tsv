@@ -1,0 +1,426 @@
+index	case_id	section	x	y	z	placements	notes
+0	connected-acacia_window_covered_connecting	connected-census	162	100	162	1	isolated default-state census of an exact predicate-connected route
+1	forced-disconnected-acacia_window_covered	forced-disconnected	163	100	162	1	matching bridge route whose Fusion sheet must be forced to tile 0
+2	connected-acacia_window_diagonal_connecting	connected-census	165	100	162	1	isolated default-state census of an exact predicate-connected route
+3	forced-disconnected-acacia_window_diagonal	forced-disconnected	166	100	162	1	matching bridge route whose Fusion sheet must be forced to tile 0
+4	connected-acacia_window_large_connecting	connected-census	168	100	162	1	isolated default-state census of an exact predicate-connected route
+5	forced-disconnected-acacia_window_large	forced-disconnected	169	100	162	1	matching bridge route whose Fusion sheet must be forced to tile 0
+6	connected-acacia_window_panes_connecting	connected-census	171	100	162	1	isolated default-state census of an exact predicate-connected route
+7	forced-disconnected-acacia_window_panes	forced-disconnected	172	100	162	1	matching bridge route whose Fusion sheet must be forced to tile 0
+8	connected-acacia_window_rounded_connecting	connected-census	174	100	162	1	isolated default-state census of an exact predicate-connected route
+9	forced-disconnected-acacia_window_rounded	forced-disconnected	175	100	162	1	matching bridge route whose Fusion sheet must be forced to tile 0
+10	connected-acacia_window_slim_connecting	connected-census	177	100	162	1	isolated default-state census of an exact predicate-connected route
+11	forced-disconnected-acacia_window_slim	forced-disconnected	178	100	162	1	matching bridge route whose Fusion sheet must be forced to tile 0
+12	connected-acacia_window_swirling_connecting	connected-census	180	100	162	1	isolated default-state census of an exact predicate-connected route
+13	forced-disconnected-acacia_window_swirling	forced-disconnected	181	100	162	1	matching bridge route whose Fusion sheet must be forced to tile 0
+14	connected-acacia_window_tiles_connecting	connected-census	183	100	162	1	isolated default-state census of an exact predicate-connected route
+15	forced-disconnected-acacia_window_tiles	forced-disconnected	184	100	162	1	matching bridge route whose Fusion sheet must be forced to tile 0
+16	connected-andesite_cut_polished_connecting	connected-census	186	100	162	1	isolated default-state census of an exact predicate-connected route
+17	connected-andesite_cut_polished_slab_connecting	connected-census	189	100	162	1	isolated default-state census of an exact predicate-connected route
+18	connected-andesite_cut_polished_stairs_connecting	connected-census	192	100	162	1	isolated default-state census of an exact predicate-connected route
+19	connected-andesite_cut_small_brick_connecting	connected-census	195	100	162	1	isolated default-state census of an exact predicate-connected route
+20	connected-andesite_cut_small_brick_slab_connecting	connected-census	198	100	162	1	isolated default-state census of an exact predicate-connected route
+21	connected-andesite_cut_small_brick_stairs_connecting	connected-census	201	100	162	1	isolated default-state census of an exact predicate-connected route
+22	connected-asurine_cut_polished_connecting	connected-census	204	100	162	1	isolated default-state census of an exact predicate-connected route
+23	connected-asurine_cut_polished_slab_connecting	connected-census	207	100	162	1	isolated default-state census of an exact predicate-connected route
+24	connected-asurine_cut_polished_stairs_connecting	connected-census	210	100	162	1	isolated default-state census of an exact predicate-connected route
+25	connected-asurine_cut_small_brick_connecting	connected-census	213	100	162	1	isolated default-state census of an exact predicate-connected route
+26	connected-asurine_cut_small_brick_slab_connecting	connected-census	162	100	165	1	isolated default-state census of an exact predicate-connected route
+27	connected-asurine_cut_small_brick_stairs_connecting	connected-census	165	100	165	1	isolated default-state census of an exact predicate-connected route
+28	connected-birch_window_bars_connecting	connected-census	168	100	165	1	isolated default-state census of an exact predicate-connected route
+29	forced-disconnected-birch_window_bars	forced-disconnected	169	100	165	1	matching bridge route whose Fusion sheet must be forced to tile 0
+30	connected-birch_window_diagonal_connecting	connected-census	171	100	165	1	isolated default-state census of an exact predicate-connected route
+31	forced-disconnected-birch_window_diagonal	forced-disconnected	172	100	165	1	matching bridge route whose Fusion sheet must be forced to tile 0
+32	connected-birch_window_large_connecting	connected-census	174	100	165	1	isolated default-state census of an exact predicate-connected route
+33	forced-disconnected-birch_window_large	forced-disconnected	175	100	165	1	matching bridge route whose Fusion sheet must be forced to tile 0
+34	connected-birch_window_panes_connecting	connected-census	177	100	165	1	isolated default-state census of an exact predicate-connected route
+35	forced-disconnected-birch_window_panes	forced-disconnected	178	100	165	1	matching bridge route whose Fusion sheet must be forced to tile 0
+36	connected-birch_window_rounded_connecting	connected-census	180	100	165	1	isolated default-state census of an exact predicate-connected route
+37	forced-disconnected-birch_window_rounded	forced-disconnected	181	100	165	1	matching bridge route whose Fusion sheet must be forced to tile 0
+38	connected-birch_window_slim_connecting	connected-census	183	100	165	1	isolated default-state census of an exact predicate-connected route
+39	forced-disconnected-birch_window_slim	forced-disconnected	184	100	165	1	matching bridge route whose Fusion sheet must be forced to tile 0
+40	connected-birch_window_swirling_connecting	connected-census	186	100	165	1	isolated default-state census of an exact predicate-connected route
+41	forced-disconnected-birch_window_swirling	forced-disconnected	187	100	165	1	matching bridge route whose Fusion sheet must be forced to tile 0
+42	connected-birch_window_tiles_connecting	connected-census	189	100	165	1	isolated default-state census of an exact predicate-connected route
+43	forced-disconnected-birch_window_tiles	forced-disconnected	190	100	165	1	matching bridge route whose Fusion sheet must be forced to tile 0
+44	connected-calcite_cut_polished_connecting	connected-census	192	100	165	1	isolated default-state census of an exact predicate-connected route
+45	connected-calcite_cut_polished_slab_connecting	connected-census	195	100	165	1	isolated default-state census of an exact predicate-connected route
+46	connected-calcite_cut_polished_stairs_connecting	connected-census	198	100	165	1	isolated default-state census of an exact predicate-connected route
+47	connected-calcite_cut_small_brick_connecting	connected-census	201	100	165	1	isolated default-state census of an exact predicate-connected route
+48	connected-calcite_cut_small_brick_slab_connecting	connected-census	204	100	165	1	isolated default-state census of an exact predicate-connected route
+49	connected-calcite_cut_small_brick_stairs_connecting	connected-census	207	100	165	1	isolated default-state census of an exact predicate-connected route
+50	connected-crimsite_cut_polished_connecting	connected-census	210	100	165	1	isolated default-state census of an exact predicate-connected route
+51	connected-crimsite_cut_polished_slab_connecting	connected-census	213	100	165	1	isolated default-state census of an exact predicate-connected route
+52	connected-crimsite_cut_polished_stairs_connecting	connected-census	162	100	168	1	isolated default-state census of an exact predicate-connected route
+53	connected-crimsite_cut_small_brick_connecting	connected-census	165	100	168	1	isolated default-state census of an exact predicate-connected route
+54	connected-crimsite_cut_small_brick_slab_connecting	connected-census	168	100	168	1	isolated default-state census of an exact predicate-connected route
+55	connected-crimsite_cut_small_brick_stairs_connecting	connected-census	171	100	168	1	isolated default-state census of an exact predicate-connected route
+56	connected-crimson_window_bars_connecting	connected-census	174	100	168	1	isolated default-state census of an exact predicate-connected route
+57	forced-disconnected-crimson_window_bars	forced-disconnected	175	100	168	1	matching bridge route whose Fusion sheet must be forced to tile 0
+58	connected-crimson_window_covered_connecting	connected-census	177	100	168	1	isolated default-state census of an exact predicate-connected route
+59	forced-disconnected-crimson_window_covered	forced-disconnected	178	100	168	1	matching bridge route whose Fusion sheet must be forced to tile 0
+60	connected-crimson_window_large_connecting	connected-census	180	100	168	1	isolated default-state census of an exact predicate-connected route
+61	forced-disconnected-crimson_window_large	forced-disconnected	181	100	168	1	matching bridge route whose Fusion sheet must be forced to tile 0
+62	connected-crimson_window_panes_connecting	connected-census	183	100	168	1	isolated default-state census of an exact predicate-connected route
+63	forced-disconnected-crimson_window_panes	forced-disconnected	184	100	168	1	matching bridge route whose Fusion sheet must be forced to tile 0
+64	connected-crimson_window_rounded_connecting	connected-census	186	100	168	1	isolated default-state census of an exact predicate-connected route
+65	forced-disconnected-crimson_window_rounded	forced-disconnected	187	100	168	1	matching bridge route whose Fusion sheet must be forced to tile 0
+66	connected-crimson_window_slim_connecting	connected-census	189	100	168	1	isolated default-state census of an exact predicate-connected route
+67	forced-disconnected-crimson_window_slim	forced-disconnected	190	100	168	1	matching bridge route whose Fusion sheet must be forced to tile 0
+68	connected-crimson_window_swirling_connecting	connected-census	192	100	168	1	isolated default-state census of an exact predicate-connected route
+69	forced-disconnected-crimson_window_swirling	forced-disconnected	193	100	168	1	matching bridge route whose Fusion sheet must be forced to tile 0
+70	connected-crimson_window_tiles_connecting	connected-census	195	100	168	1	isolated default-state census of an exact predicate-connected route
+71	forced-disconnected-crimson_window_tiles	forced-disconnected	196	100	168	1	matching bridge route whose Fusion sheet must be forced to tile 0
+72	connected-dark_oak_window_bars_connecting	connected-census	198	100	168	1	isolated default-state census of an exact predicate-connected route
+73	forced-disconnected-dark_oak_window_bars	forced-disconnected	199	100	168	1	matching bridge route whose Fusion sheet must be forced to tile 0
+74	connected-dark_oak_window_covered_connecting	connected-census	201	100	168	1	isolated default-state census of an exact predicate-connected route
+75	forced-disconnected-dark_oak_window_covered	forced-disconnected	202	100	168	1	matching bridge route whose Fusion sheet must be forced to tile 0
+76	connected-dark_oak_window_diagonal_connecting	connected-census	204	100	168	1	isolated default-state census of an exact predicate-connected route
+77	forced-disconnected-dark_oak_window_diagonal	forced-disconnected	205	100	168	1	matching bridge route whose Fusion sheet must be forced to tile 0
+78	connected-dark_oak_window_panes_connecting	connected-census	207	100	168	1	isolated default-state census of an exact predicate-connected route
+79	forced-disconnected-dark_oak_window_panes	forced-disconnected	208	100	168	1	matching bridge route whose Fusion sheet must be forced to tile 0
+80	connected-dark_oak_window_rounded_connecting	connected-census	210	100	168	1	isolated default-state census of an exact predicate-connected route
+81	forced-disconnected-dark_oak_window_rounded	forced-disconnected	211	100	168	1	matching bridge route whose Fusion sheet must be forced to tile 0
+82	connected-dark_oak_window_slim_connecting	connected-census	213	100	168	1	isolated default-state census of an exact predicate-connected route
+83	forced-disconnected-dark_oak_window_slim	forced-disconnected	214	100	168	1	matching bridge route whose Fusion sheet must be forced to tile 0
+84	connected-dark_oak_window_swirling_connecting	connected-census	162	100	171	1	isolated default-state census of an exact predicate-connected route
+85	forced-disconnected-dark_oak_window_swirling	forced-disconnected	163	100	171	1	matching bridge route whose Fusion sheet must be forced to tile 0
+86	connected-dark_oak_window_tiles_connecting	connected-census	165	100	171	1	isolated default-state census of an exact predicate-connected route
+87	forced-disconnected-dark_oak_window_tiles	forced-disconnected	166	100	171	1	matching bridge route whose Fusion sheet must be forced to tile 0
+88	connected-deepslate_cut_polished_connecting	connected-census	168	100	171	1	isolated default-state census of an exact predicate-connected route
+89	connected-deepslate_cut_polished_slab_connecting	connected-census	171	100	171	1	isolated default-state census of an exact predicate-connected route
+90	connected-deepslate_cut_polished_stairs_connecting	connected-census	174	100	171	1	isolated default-state census of an exact predicate-connected route
+91	connected-deepslate_cut_small_brick_connecting	connected-census	177	100	171	1	isolated default-state census of an exact predicate-connected route
+92	connected-deepslate_cut_small_brick_slab_connecting	connected-census	180	100	171	1	isolated default-state census of an exact predicate-connected route
+93	connected-deepslate_cut_small_brick_stairs_connecting	connected-census	183	100	171	1	isolated default-state census of an exact predicate-connected route
+94	connected-diorite_cut_polished_connecting	connected-census	186	100	171	1	isolated default-state census of an exact predicate-connected route
+95	connected-diorite_cut_polished_slab_connecting	connected-census	189	100	171	1	isolated default-state census of an exact predicate-connected route
+96	connected-diorite_cut_polished_stairs_connecting	connected-census	192	100	171	1	isolated default-state census of an exact predicate-connected route
+97	connected-diorite_cut_small_brick_connecting	connected-census	195	100	171	1	isolated default-state census of an exact predicate-connected route
+98	connected-diorite_cut_small_brick_slab_connecting	connected-census	198	100	171	1	isolated default-state census of an exact predicate-connected route
+99	connected-diorite_cut_small_brick_stairs_connecting	connected-census	201	100	171	1	isolated default-state census of an exact predicate-connected route
+100	connected-dripstone_cut_polished_connecting	connected-census	204	100	171	1	isolated default-state census of an exact predicate-connected route
+101	connected-dripstone_cut_polished_slab_connecting	connected-census	207	100	171	1	isolated default-state census of an exact predicate-connected route
+102	connected-dripstone_cut_polished_stairs_connecting	connected-census	210	100	171	1	isolated default-state census of an exact predicate-connected route
+103	connected-dripstone_cut_small_brick_connecting	connected-census	213	100	171	1	isolated default-state census of an exact predicate-connected route
+104	connected-dripstone_cut_small_brick_slab_connecting	connected-census	162	100	174	1	isolated default-state census of an exact predicate-connected route
+105	connected-dripstone_cut_small_brick_stairs_connecting	connected-census	165	100	174	1	isolated default-state census of an exact predicate-connected route
+106	connected-granite_cut_polished_connecting	connected-census	168	100	174	1	isolated default-state census of an exact predicate-connected route
+107	connected-granite_cut_polished_slab_connecting	connected-census	171	100	174	1	isolated default-state census of an exact predicate-connected route
+108	connected-granite_cut_polished_stairs_connecting	connected-census	174	100	174	1	isolated default-state census of an exact predicate-connected route
+109	connected-granite_cut_small_brick_connecting	connected-census	177	100	174	1	isolated default-state census of an exact predicate-connected route
+110	connected-granite_cut_small_brick_slab_connecting	connected-census	180	100	174	1	isolated default-state census of an exact predicate-connected route
+111	connected-granite_cut_small_brick_stairs_connecting	connected-census	183	100	174	1	isolated default-state census of an exact predicate-connected route
+112	connected-jungle_window_bars_connecting	connected-census	186	100	174	1	isolated default-state census of an exact predicate-connected route
+113	forced-disconnected-jungle_window_bars	forced-disconnected	187	100	174	1	matching bridge route whose Fusion sheet must be forced to tile 0
+114	connected-jungle_window_covered_connecting	connected-census	189	100	174	1	isolated default-state census of an exact predicate-connected route
+115	forced-disconnected-jungle_window_covered	forced-disconnected	190	100	174	1	matching bridge route whose Fusion sheet must be forced to tile 0
+116	connected-jungle_window_diagonal_connecting	connected-census	192	100	174	1	isolated default-state census of an exact predicate-connected route
+117	forced-disconnected-jungle_window_diagonal	forced-disconnected	193	100	174	1	matching bridge route whose Fusion sheet must be forced to tile 0
+118	connected-jungle_window_large_connecting	connected-census	195	100	174	1	isolated default-state census of an exact predicate-connected route
+119	forced-disconnected-jungle_window_large	forced-disconnected	196	100	174	1	matching bridge route whose Fusion sheet must be forced to tile 0
+120	connected-jungle_window_panes_connecting	connected-census	198	100	174	1	isolated default-state census of an exact predicate-connected route
+121	forced-disconnected-jungle_window_panes	forced-disconnected	199	100	174	1	matching bridge route whose Fusion sheet must be forced to tile 0
+122	connected-jungle_window_rounded_connecting	connected-census	201	100	174	1	isolated default-state census of an exact predicate-connected route
+123	forced-disconnected-jungle_window_rounded	forced-disconnected	202	100	174	1	matching bridge route whose Fusion sheet must be forced to tile 0
+124	connected-jungle_window_swirling_connecting	connected-census	204	100	174	1	isolated default-state census of an exact predicate-connected route
+125	forced-disconnected-jungle_window_swirling	forced-disconnected	205	100	174	1	matching bridge route whose Fusion sheet must be forced to tile 0
+126	connected-jungle_window_tiles_connecting	connected-census	207	100	174	1	isolated default-state census of an exact predicate-connected route
+127	forced-disconnected-jungle_window_tiles	forced-disconnected	208	100	174	1	matching bridge route whose Fusion sheet must be forced to tile 0
+128	connected-limestone_cut_polished_connecting	connected-census	210	100	174	1	isolated default-state census of an exact predicate-connected route
+129	connected-limestone_cut_polished_slab_connecting	connected-census	213	100	174	1	isolated default-state census of an exact predicate-connected route
+130	connected-limestone_cut_polished_stairs_connecting	connected-census	162	100	177	1	isolated default-state census of an exact predicate-connected route
+131	connected-limestone_cut_small_brick_connecting	connected-census	165	100	177	1	isolated default-state census of an exact predicate-connected route
+132	connected-limestone_cut_small_brick_slab_connecting	connected-census	168	100	177	1	isolated default-state census of an exact predicate-connected route
+133	connected-limestone_cut_small_brick_stairs_connecting	connected-census	171	100	177	1	isolated default-state census of an exact predicate-connected route
+134	connected-mangrove_window_bars_connecting	connected-census	174	100	177	1	isolated default-state census of an exact predicate-connected route
+135	forced-disconnected-mangrove_window_bars	forced-disconnected	175	100	177	1	matching bridge route whose Fusion sheet must be forced to tile 0
+136	connected-mangrove_window_covered_connecting	connected-census	177	100	177	1	isolated default-state census of an exact predicate-connected route
+137	forced-disconnected-mangrove_window_covered	forced-disconnected	178	100	177	1	matching bridge route whose Fusion sheet must be forced to tile 0
+138	connected-mangrove_window_diagonal_connecting	connected-census	180	100	177	1	isolated default-state census of an exact predicate-connected route
+139	forced-disconnected-mangrove_window_diagonal	forced-disconnected	181	100	177	1	matching bridge route whose Fusion sheet must be forced to tile 0
+140	connected-mangrove_window_large_connecting	connected-census	183	100	177	1	isolated default-state census of an exact predicate-connected route
+141	forced-disconnected-mangrove_window_large	forced-disconnected	184	100	177	1	matching bridge route whose Fusion sheet must be forced to tile 0
+142	connected-mangrove_window_panes_connecting	connected-census	186	100	177	1	isolated default-state census of an exact predicate-connected route
+143	forced-disconnected-mangrove_window_panes	forced-disconnected	187	100	177	1	matching bridge route whose Fusion sheet must be forced to tile 0
+144	connected-mangrove_window_slim_connecting	connected-census	189	100	177	1	isolated default-state census of an exact predicate-connected route
+145	forced-disconnected-mangrove_window_slim	forced-disconnected	190	100	177	1	matching bridge route whose Fusion sheet must be forced to tile 0
+146	connected-mangrove_window_swirling_connecting	connected-census	192	100	177	1	isolated default-state census of an exact predicate-connected route
+147	forced-disconnected-mangrove_window_swirling	forced-disconnected	193	100	177	1	matching bridge route whose Fusion sheet must be forced to tile 0
+148	connected-mangrove_window_tiles_connecting	connected-census	195	100	177	1	isolated default-state census of an exact predicate-connected route
+149	forced-disconnected-mangrove_window_tiles	forced-disconnected	196	100	177	1	matching bridge route whose Fusion sheet must be forced to tile 0
+150	connected-oak_window_bars_connecting	connected-census	198	100	177	1	isolated default-state census of an exact predicate-connected route
+151	forced-disconnected-oak_window_bars	forced-disconnected	199	100	177	1	matching bridge route whose Fusion sheet must be forced to tile 0
+152	connected-oak_window_covered_connecting	connected-census	201	100	177	1	isolated default-state census of an exact predicate-connected route
+153	forced-disconnected-oak_window_covered	forced-disconnected	202	100	177	1	matching bridge route whose Fusion sheet must be forced to tile 0
+154	connected-oak_window_diagonal_connecting	connected-census	204	100	177	1	isolated default-state census of an exact predicate-connected route
+155	forced-disconnected-oak_window_diagonal	forced-disconnected	205	100	177	1	matching bridge route whose Fusion sheet must be forced to tile 0
+156	connected-oak_window_large_connecting	connected-census	207	100	177	1	isolated default-state census of an exact predicate-connected route
+157	forced-disconnected-oak_window_large	forced-disconnected	208	100	177	1	matching bridge route whose Fusion sheet must be forced to tile 0
+158	connected-oak_window_rounded_connecting	connected-census	210	100	177	1	isolated default-state census of an exact predicate-connected route
+159	forced-disconnected-oak_window_rounded	forced-disconnected	211	100	177	1	matching bridge route whose Fusion sheet must be forced to tile 0
+160	connected-oak_window_slim_connecting	connected-census	213	100	177	1	isolated default-state census of an exact predicate-connected route
+161	forced-disconnected-oak_window_slim	forced-disconnected	214	100	177	1	matching bridge route whose Fusion sheet must be forced to tile 0
+162	connected-oak_window_swirling_connecting	connected-census	162	100	180	1	isolated default-state census of an exact predicate-connected route
+163	forced-disconnected-oak_window_swirling	forced-disconnected	163	100	180	1	matching bridge route whose Fusion sheet must be forced to tile 0
+164	connected-oak_window_tiles_connecting	connected-census	165	100	180	1	isolated default-state census of an exact predicate-connected route
+165	forced-disconnected-oak_window_tiles	forced-disconnected	166	100	180	1	matching bridge route whose Fusion sheet must be forced to tile 0
+166	connected-ochrum_cut_polished_connecting	connected-census	168	100	180	1	isolated default-state census of an exact predicate-connected route
+167	connected-ochrum_cut_polished_slab_connecting	connected-census	171	100	180	1	isolated default-state census of an exact predicate-connected route
+168	connected-ochrum_cut_polished_stairs_connecting	connected-census	174	100	180	1	isolated default-state census of an exact predicate-connected route
+169	connected-ochrum_cut_small_brick_connecting	connected-census	177	100	180	1	isolated default-state census of an exact predicate-connected route
+170	connected-ochrum_cut_small_brick_slab_connecting	connected-census	180	100	180	1	isolated default-state census of an exact predicate-connected route
+171	connected-ochrum_cut_small_brick_stairs_connecting	connected-census	183	100	180	1	isolated default-state census of an exact predicate-connected route
+172	connected-rose_quartz_bricks_connecting	connected-census	186	100	180	1	isolated default-state census of an exact predicate-connected route
+173	forced-disconnected-rose_quartz_bricks	forced-disconnected	187	100	180	1	matching bridge route whose Fusion sheet must be forced to tile 0
+174	connected-rose_quartz_chiseled_connecting	connected-census	189	100	180	1	isolated default-state census of an exact predicate-connected route
+175	forced-disconnected-rose_quartz_chiseled	forced-disconnected	190	100	180	1	matching bridge route whose Fusion sheet must be forced to tile 0
+176	connected-rose_quartz_crushed_connecting	connected-census	192	100	180	1	isolated default-state census of an exact predicate-connected route
+177	forced-disconnected-rose_quartz_crushed	forced-disconnected	193	100	180	1	matching bridge route whose Fusion sheet must be forced to tile 0
+178	connected-rose_quartz_polished_block_connecting	connected-census	195	100	180	1	isolated default-state census of an exact predicate-connected route
+179	forced-disconnected-rose_quartz_polished_block	forced-disconnected	196	100	180	1	matching bridge route whose Fusion sheet must be forced to tile 0
+180	connected-rose_quartz_squares_connecting	connected-census	198	100	180	1	isolated default-state census of an exact predicate-connected route
+181	forced-disconnected-rose_quartz_squares	forced-disconnected	199	100	180	1	matching bridge route whose Fusion sheet must be forced to tile 0
+182	connected-rose_quartz_tiles_connecting	connected-census	201	100	180	1	isolated default-state census of an exact predicate-connected route
+183	connected-scorchia_cut_polished_connecting	connected-census	204	100	180	1	isolated default-state census of an exact predicate-connected route
+184	connected-scorchia_cut_polished_slab_connecting	connected-census	207	100	180	1	isolated default-state census of an exact predicate-connected route
+185	connected-scorchia_cut_polished_stairs_connecting	connected-census	210	100	180	1	isolated default-state census of an exact predicate-connected route
+186	connected-scorchia_cut_small_brick_connecting	connected-census	213	100	180	1	isolated default-state census of an exact predicate-connected route
+187	connected-scorchia_cut_small_brick_slab_connecting	connected-census	162	100	183	1	isolated default-state census of an exact predicate-connected route
+188	connected-scorchia_cut_small_brick_stairs_connecting	connected-census	165	100	183	1	isolated default-state census of an exact predicate-connected route
+189	connected-scoria_cut_polished_connecting	connected-census	168	100	183	1	isolated default-state census of an exact predicate-connected route
+190	connected-scoria_cut_polished_slab_connecting	connected-census	171	100	183	1	isolated default-state census of an exact predicate-connected route
+191	connected-scoria_cut_polished_stairs_connecting	connected-census	174	100	183	1	isolated default-state census of an exact predicate-connected route
+192	connected-scoria_cut_small_brick_connecting	connected-census	177	100	183	1	isolated default-state census of an exact predicate-connected route
+193	connected-scoria_cut_small_brick_slab_connecting	connected-census	180	100	183	1	isolated default-state census of an exact predicate-connected route
+194	connected-scoria_cut_small_brick_stairs_connecting	connected-census	183	100	183	1	isolated default-state census of an exact predicate-connected route
+195	connected-spruce_window_bars_connecting	connected-census	186	100	183	1	isolated default-state census of an exact predicate-connected route
+196	forced-disconnected-spruce_window_bars	forced-disconnected	187	100	183	1	matching bridge route whose Fusion sheet must be forced to tile 0
+197	connected-spruce_window_covered_connecting	connected-census	189	100	183	1	isolated default-state census of an exact predicate-connected route
+198	forced-disconnected-spruce_window_covered	forced-disconnected	190	100	183	1	matching bridge route whose Fusion sheet must be forced to tile 0
+199	connected-spruce_window_diagonal_connecting	connected-census	192	100	183	1	isolated default-state census of an exact predicate-connected route
+200	forced-disconnected-spruce_window_diagonal	forced-disconnected	193	100	183	1	matching bridge route whose Fusion sheet must be forced to tile 0
+201	connected-spruce_window_large_connecting	connected-census	195	100	183	1	isolated default-state census of an exact predicate-connected route
+202	forced-disconnected-spruce_window_large	forced-disconnected	196	100	183	1	matching bridge route whose Fusion sheet must be forced to tile 0
+203	connected-spruce_window_panes_connecting	connected-census	198	100	183	1	isolated default-state census of an exact predicate-connected route
+204	forced-disconnected-spruce_window_panes	forced-disconnected	199	100	183	1	matching bridge route whose Fusion sheet must be forced to tile 0
+205	connected-spruce_window_rounded_connecting	connected-census	201	100	183	1	isolated default-state census of an exact predicate-connected route
+206	forced-disconnected-spruce_window_rounded	forced-disconnected	202	100	183	1	matching bridge route whose Fusion sheet must be forced to tile 0
+207	connected-spruce_window_slim_connecting	connected-census	204	100	183	1	isolated default-state census of an exact predicate-connected route
+208	forced-disconnected-spruce_window_slim	forced-disconnected	205	100	183	1	matching bridge route whose Fusion sheet must be forced to tile 0
+209	connected-spruce_window_swirling_connecting	connected-census	207	100	183	1	isolated default-state census of an exact predicate-connected route
+210	forced-disconnected-spruce_window_swirling	forced-disconnected	208	100	183	1	matching bridge route whose Fusion sheet must be forced to tile 0
+211	connected-spruce_window_tiles_connecting	connected-census	210	100	183	1	isolated default-state census of an exact predicate-connected route
+212	forced-disconnected-spruce_window_tiles	forced-disconnected	211	100	183	1	matching bridge route whose Fusion sheet must be forced to tile 0
+213	connected-tuff_cut_polished_connecting	connected-census	213	100	183	1	isolated default-state census of an exact predicate-connected route
+214	connected-tuff_cut_polished_slab_connecting	connected-census	162	100	186	1	isolated default-state census of an exact predicate-connected route
+215	connected-tuff_cut_polished_stairs_connecting	connected-census	165	100	186	1	isolated default-state census of an exact predicate-connected route
+216	connected-tuff_cut_small_brick_connecting	connected-census	168	100	186	1	isolated default-state census of an exact predicate-connected route
+217	connected-tuff_cut_small_brick_slab_connecting	connected-census	171	100	186	1	isolated default-state census of an exact predicate-connected route
+218	connected-tuff_cut_small_brick_stairs_connecting	connected-census	174	100	186	1	isolated default-state census of an exact predicate-connected route
+219	connected-veridium_cut_polished_connecting	connected-census	177	100	186	1	isolated default-state census of an exact predicate-connected route
+220	connected-veridium_cut_polished_slab_connecting	connected-census	180	100	186	1	isolated default-state census of an exact predicate-connected route
+221	connected-veridium_cut_polished_stairs_connecting	connected-census	183	100	186	1	isolated default-state census of an exact predicate-connected route
+222	connected-veridium_cut_small_brick_connecting	connected-census	186	100	186	1	isolated default-state census of an exact predicate-connected route
+223	connected-veridium_cut_small_brick_slab_connecting	connected-census	189	100	186	1	isolated default-state census of an exact predicate-connected route
+224	connected-veridium_cut_small_brick_stairs_connecting	connected-census	192	100	186	1	isolated default-state census of an exact predicate-connected route
+225	connected-warped_window_bars_connecting	connected-census	195	100	186	1	isolated default-state census of an exact predicate-connected route
+226	forced-disconnected-warped_window_bars	forced-disconnected	196	100	186	1	matching bridge route whose Fusion sheet must be forced to tile 0
+227	connected-warped_window_covered_connecting	connected-census	198	100	186	1	isolated default-state census of an exact predicate-connected route
+228	forced-disconnected-warped_window_covered	forced-disconnected	199	100	186	1	matching bridge route whose Fusion sheet must be forced to tile 0
+229	connected-warped_window_diagonal_connecting	connected-census	201	100	186	1	isolated default-state census of an exact predicate-connected route
+230	forced-disconnected-warped_window_diagonal	forced-disconnected	202	100	186	1	matching bridge route whose Fusion sheet must be forced to tile 0
+231	connected-warped_window_large_connecting	connected-census	204	100	186	1	isolated default-state census of an exact predicate-connected route
+232	forced-disconnected-warped_window_large	forced-disconnected	205	100	186	1	matching bridge route whose Fusion sheet must be forced to tile 0
+233	connected-warped_window_panes_connecting	connected-census	207	100	186	1	isolated default-state census of an exact predicate-connected route
+234	forced-disconnected-warped_window_panes	forced-disconnected	208	100	186	1	matching bridge route whose Fusion sheet must be forced to tile 0
+235	connected-warped_window_rounded_connecting	connected-census	210	100	186	1	isolated default-state census of an exact predicate-connected route
+236	forced-disconnected-warped_window_rounded	forced-disconnected	211	100	186	1	matching bridge route whose Fusion sheet must be forced to tile 0
+237	connected-warped_window_slim_connecting	connected-census	213	100	186	1	isolated default-state census of an exact predicate-connected route
+238	forced-disconnected-warped_window_slim	forced-disconnected	214	100	186	1	matching bridge route whose Fusion sheet must be forced to tile 0
+239	connected-warped_window_tiles_connecting	connected-census	162	100	189	1	isolated default-state census of an exact predicate-connected route
+240	forced-disconnected-warped_window_tiles	forced-disconnected	163	100	189	1	matching bridge route whose Fusion sheet must be forced to tile 0
+241	mask-full-none	layout-mask	162	100	198	1	canonical FULL UP-face mask 0x00
+242	mask-full-top	layout-mask	168	100	198	2	canonical FULL UP-face mask 0x01
+243	mask-full-right	layout-mask	174	100	198	2	canonical FULL UP-face mask 0x04
+244	mask-full-bottom	layout-mask	180	100	198	2	canonical FULL UP-face mask 0x10
+245	mask-full-left	layout-mask	186	100	198	2	canonical FULL UP-face mask 0x40
+246	mask-full-top-right	layout-mask	192	100	198	3	canonical FULL UP-face mask 0x05
+247	mask-full-top-bottom	layout-mask	198	100	198	3	canonical FULL UP-face mask 0x11
+248	mask-full-left-right	layout-mask	162	100	204	3	canonical FULL UP-face mask 0x44
+249	mask-full-cardinals	layout-mask	168	100	204	5	canonical FULL UP-face mask 0x55
+250	mask-full-one-diagonal	layout-mask	174	100	204	6	canonical FULL UP-face mask 0x57
+251	mask-full-mask-dd	layout-mask	180	100	204	7	canonical FULL UP-face mask 0xdd
+252	mask-full-full-edge47	layout-mask	186	100	204	8	canonical FULL UP-face mask 0x7f
+253	mask-full-full-edge46	layout-mask	192	100	204	8	canonical FULL UP-face mask 0xfd
+254	mask-full-all	layout-mask	198	100	204	9	canonical FULL UP-face mask 0xff
+255	mask-simple-none	layout-mask	162	100	210	1	canonical SIMPLE UP-face mask 0x00
+256	mask-simple-top	layout-mask	168	100	210	2	canonical SIMPLE UP-face mask 0x01
+257	mask-simple-right	layout-mask	174	100	210	2	canonical SIMPLE UP-face mask 0x04
+258	mask-simple-bottom	layout-mask	180	100	210	2	canonical SIMPLE UP-face mask 0x10
+259	mask-simple-left	layout-mask	186	100	210	2	canonical SIMPLE UP-face mask 0x40
+260	mask-simple-top-right	layout-mask	192	100	210	3	canonical SIMPLE UP-face mask 0x05
+261	mask-simple-top-bottom	layout-mask	198	100	210	3	canonical SIMPLE UP-face mask 0x11
+262	mask-simple-left-right	layout-mask	162	100	216	3	canonical SIMPLE UP-face mask 0x44
+263	mask-simple-cardinals	layout-mask	168	100	216	5	canonical SIMPLE UP-face mask 0x55
+264	mask-simple-one-diagonal	layout-mask	174	100	216	6	canonical SIMPLE UP-face mask 0x57
+265	mask-simple-mask-dd	layout-mask	180	100	216	7	canonical SIMPLE UP-face mask 0xdd
+266	mask-simple-full-edge47	layout-mask	186	100	216	8	canonical SIMPLE UP-face mask 0x7f
+267	mask-simple-full-edge46	layout-mask	192	100	216	8	canonical SIMPLE UP-face mask 0xfd
+268	mask-simple-all	layout-mask	198	100	216	9	canonical SIMPLE UP-face mask 0xff
+269	slab-bottom-waterlogged-false	slab-state	238	100	162	1	all six legal representative slab states
+270	slab-bottom-waterlogged-true	slab-state	242	100	162	1	all six legal representative slab states
+271	slab-double-waterlogged-false	slab-state	246	100	162	1	all six legal representative slab states
+272	slab-double-waterlogged-true	slab-state	238	100	166	1	all six legal representative slab states
+273	slab-top-waterlogged-false	slab-state	242	100	166	1	all six legal representative slab states
+274	slab-top-waterlogged-true	slab-state	246	100	166	1	all six legal representative slab states
+275	stairs-east-bottom-inner_left-waterlogged-false	stairs-state	162	100	224	2	all 80 legal targets; non-straight topology has support first
+276	stairs-east-bottom-inner_left-waterlogged-true	stairs-state	166	100	224	2	all 80 legal targets; non-straight topology has support first
+277	stairs-east-bottom-inner_right-waterlogged-false	stairs-state	170	100	224	2	all 80 legal targets; non-straight topology has support first
+278	stairs-east-bottom-inner_right-waterlogged-true	stairs-state	174	100	224	2	all 80 legal targets; non-straight topology has support first
+279	stairs-east-bottom-outer_left-waterlogged-false	stairs-state	178	100	224	2	all 80 legal targets; non-straight topology has support first
+280	stairs-east-bottom-outer_left-waterlogged-true	stairs-state	182	100	224	2	all 80 legal targets; non-straight topology has support first
+281	stairs-east-bottom-outer_right-waterlogged-false	stairs-state	186	100	224	2	all 80 legal targets; non-straight topology has support first
+282	stairs-east-bottom-outer_right-waterlogged-true	stairs-state	190	100	224	2	all 80 legal targets; non-straight topology has support first
+283	stairs-east-bottom-straight-waterlogged-false	stairs-state	194	100	224	1	all 80 legal targets; non-straight topology has support first
+284	stairs-east-bottom-straight-waterlogged-true	stairs-state	198	100	224	1	all 80 legal targets; non-straight topology has support first
+285	stairs-east-top-inner_left-waterlogged-false	stairs-state	162	100	228	2	all 80 legal targets; non-straight topology has support first
+286	stairs-east-top-inner_left-waterlogged-true	stairs-state	166	100	228	2	all 80 legal targets; non-straight topology has support first
+287	stairs-east-top-inner_right-waterlogged-false	stairs-state	170	100	228	2	all 80 legal targets; non-straight topology has support first
+288	stairs-east-top-inner_right-waterlogged-true	stairs-state	174	100	228	2	all 80 legal targets; non-straight topology has support first
+289	stairs-east-top-outer_left-waterlogged-false	stairs-state	178	100	228	2	all 80 legal targets; non-straight topology has support first
+290	stairs-east-top-outer_left-waterlogged-true	stairs-state	182	100	228	2	all 80 legal targets; non-straight topology has support first
+291	stairs-east-top-outer_right-waterlogged-false	stairs-state	186	100	228	2	all 80 legal targets; non-straight topology has support first
+292	stairs-east-top-outer_right-waterlogged-true	stairs-state	190	100	228	2	all 80 legal targets; non-straight topology has support first
+293	stairs-east-top-straight-waterlogged-false	stairs-state	194	100	228	1	all 80 legal targets; non-straight topology has support first
+294	stairs-east-top-straight-waterlogged-true	stairs-state	198	100	228	1	all 80 legal targets; non-straight topology has support first
+295	stairs-north-bottom-inner_left-waterlogged-false	stairs-state	162	100	232	2	all 80 legal targets; non-straight topology has support first
+296	stairs-north-bottom-inner_left-waterlogged-true	stairs-state	166	100	232	2	all 80 legal targets; non-straight topology has support first
+297	stairs-north-bottom-inner_right-waterlogged-false	stairs-state	170	100	232	2	all 80 legal targets; non-straight topology has support first
+298	stairs-north-bottom-inner_right-waterlogged-true	stairs-state	174	100	232	2	all 80 legal targets; non-straight topology has support first
+299	stairs-north-bottom-outer_left-waterlogged-false	stairs-state	178	100	232	2	all 80 legal targets; non-straight topology has support first
+300	stairs-north-bottom-outer_left-waterlogged-true	stairs-state	182	100	232	2	all 80 legal targets; non-straight topology has support first
+301	stairs-north-bottom-outer_right-waterlogged-false	stairs-state	186	100	232	2	all 80 legal targets; non-straight topology has support first
+302	stairs-north-bottom-outer_right-waterlogged-true	stairs-state	190	100	232	2	all 80 legal targets; non-straight topology has support first
+303	stairs-north-bottom-straight-waterlogged-false	stairs-state	194	100	232	1	all 80 legal targets; non-straight topology has support first
+304	stairs-north-bottom-straight-waterlogged-true	stairs-state	198	100	232	1	all 80 legal targets; non-straight topology has support first
+305	stairs-north-top-inner_left-waterlogged-false	stairs-state	162	100	236	2	all 80 legal targets; non-straight topology has support first
+306	stairs-north-top-inner_left-waterlogged-true	stairs-state	166	100	236	2	all 80 legal targets; non-straight topology has support first
+307	stairs-north-top-inner_right-waterlogged-false	stairs-state	170	100	236	2	all 80 legal targets; non-straight topology has support first
+308	stairs-north-top-inner_right-waterlogged-true	stairs-state	174	100	236	2	all 80 legal targets; non-straight topology has support first
+309	stairs-north-top-outer_left-waterlogged-false	stairs-state	178	100	236	2	all 80 legal targets; non-straight topology has support first
+310	stairs-north-top-outer_left-waterlogged-true	stairs-state	182	100	236	2	all 80 legal targets; non-straight topology has support first
+311	stairs-north-top-outer_right-waterlogged-false	stairs-state	186	100	236	2	all 80 legal targets; non-straight topology has support first
+312	stairs-north-top-outer_right-waterlogged-true	stairs-state	190	100	236	2	all 80 legal targets; non-straight topology has support first
+313	stairs-north-top-straight-waterlogged-false	stairs-state	194	100	236	1	all 80 legal targets; non-straight topology has support first
+314	stairs-north-top-straight-waterlogged-true	stairs-state	198	100	236	1	all 80 legal targets; non-straight topology has support first
+315	stairs-south-bottom-inner_left-waterlogged-false	stairs-state	162	100	240	2	all 80 legal targets; non-straight topology has support first
+316	stairs-south-bottom-inner_left-waterlogged-true	stairs-state	166	100	240	2	all 80 legal targets; non-straight topology has support first
+317	stairs-south-bottom-inner_right-waterlogged-false	stairs-state	170	100	240	2	all 80 legal targets; non-straight topology has support first
+318	stairs-south-bottom-inner_right-waterlogged-true	stairs-state	174	100	240	2	all 80 legal targets; non-straight topology has support first
+319	stairs-south-bottom-outer_left-waterlogged-false	stairs-state	178	100	240	2	all 80 legal targets; non-straight topology has support first
+320	stairs-south-bottom-outer_left-waterlogged-true	stairs-state	182	100	240	2	all 80 legal targets; non-straight topology has support first
+321	stairs-south-bottom-outer_right-waterlogged-false	stairs-state	186	100	240	2	all 80 legal targets; non-straight topology has support first
+322	stairs-south-bottom-outer_right-waterlogged-true	stairs-state	190	100	240	2	all 80 legal targets; non-straight topology has support first
+323	stairs-south-bottom-straight-waterlogged-false	stairs-state	194	100	240	1	all 80 legal targets; non-straight topology has support first
+324	stairs-south-bottom-straight-waterlogged-true	stairs-state	198	100	240	1	all 80 legal targets; non-straight topology has support first
+325	stairs-south-top-inner_left-waterlogged-false	stairs-state	162	100	244	2	all 80 legal targets; non-straight topology has support first
+326	stairs-south-top-inner_left-waterlogged-true	stairs-state	166	100	244	2	all 80 legal targets; non-straight topology has support first
+327	stairs-south-top-inner_right-waterlogged-false	stairs-state	170	100	244	2	all 80 legal targets; non-straight topology has support first
+328	stairs-south-top-inner_right-waterlogged-true	stairs-state	174	100	244	2	all 80 legal targets; non-straight topology has support first
+329	stairs-south-top-outer_left-waterlogged-false	stairs-state	178	100	244	2	all 80 legal targets; non-straight topology has support first
+330	stairs-south-top-outer_left-waterlogged-true	stairs-state	182	100	244	2	all 80 legal targets; non-straight topology has support first
+331	stairs-south-top-outer_right-waterlogged-false	stairs-state	186	100	244	2	all 80 legal targets; non-straight topology has support first
+332	stairs-south-top-outer_right-waterlogged-true	stairs-state	190	100	244	2	all 80 legal targets; non-straight topology has support first
+333	stairs-south-top-straight-waterlogged-false	stairs-state	194	100	244	1	all 80 legal targets; non-straight topology has support first
+334	stairs-south-top-straight-waterlogged-true	stairs-state	198	100	244	1	all 80 legal targets; non-straight topology has support first
+335	stairs-west-bottom-inner_left-waterlogged-false	stairs-state	162	100	248	2	all 80 legal targets; non-straight topology has support first
+336	stairs-west-bottom-inner_left-waterlogged-true	stairs-state	166	100	248	2	all 80 legal targets; non-straight topology has support first
+337	stairs-west-bottom-inner_right-waterlogged-false	stairs-state	170	100	248	2	all 80 legal targets; non-straight topology has support first
+338	stairs-west-bottom-inner_right-waterlogged-true	stairs-state	174	100	248	2	all 80 legal targets; non-straight topology has support first
+339	stairs-west-bottom-outer_left-waterlogged-false	stairs-state	178	100	248	2	all 80 legal targets; non-straight topology has support first
+340	stairs-west-bottom-outer_left-waterlogged-true	stairs-state	182	100	248	2	all 80 legal targets; non-straight topology has support first
+341	stairs-west-bottom-outer_right-waterlogged-false	stairs-state	186	100	248	2	all 80 legal targets; non-straight topology has support first
+342	stairs-west-bottom-outer_right-waterlogged-true	stairs-state	190	100	248	2	all 80 legal targets; non-straight topology has support first
+343	stairs-west-bottom-straight-waterlogged-false	stairs-state	194	100	248	1	all 80 legal targets; non-straight topology has support first
+344	stairs-west-bottom-straight-waterlogged-true	stairs-state	198	100	248	1	all 80 legal targets; non-straight topology has support first
+345	stairs-west-top-inner_left-waterlogged-false	stairs-state	162	100	252	2	all 80 legal targets; non-straight topology has support first
+346	stairs-west-top-inner_left-waterlogged-true	stairs-state	166	100	252	2	all 80 legal targets; non-straight topology has support first
+347	stairs-west-top-inner_right-waterlogged-false	stairs-state	170	100	252	2	all 80 legal targets; non-straight topology has support first
+348	stairs-west-top-inner_right-waterlogged-true	stairs-state	174	100	252	2	all 80 legal targets; non-straight topology has support first
+349	stairs-west-top-outer_left-waterlogged-false	stairs-state	178	100	252	2	all 80 legal targets; non-straight topology has support first
+350	stairs-west-top-outer_left-waterlogged-true	stairs-state	182	100	252	2	all 80 legal targets; non-straight topology has support first
+351	stairs-west-top-outer_right-waterlogged-false	stairs-state	186	100	252	2	all 80 legal targets; non-straight topology has support first
+352	stairs-west-top-outer_right-waterlogged-true	stairs-state	190	100	252	2	all 80 legal targets; non-straight topology has support first
+353	stairs-west-top-straight-waterlogged-false	stairs-state	194	100	252	1	all 80 legal targets; non-straight topology has support first
+354	stairs-west-top-straight-waterlogged-true	stairs-state	198	100	252	1	all 80 legal targets; non-straight topology has support first
+355	axis-pair-acacia-covered-x	axis-pair	220	100	162	2	connected route beside the same-sheet forced-tile0 route
+356	axis-pair-acacia-covered-y	axis-pair	224	100	162	2	connected route beside the same-sheet forced-tile0 route
+357	axis-pair-acacia-covered-z	axis-pair	228	100	162	2	connected route beside the same-sheet forced-tile0 route
+358	axis-pair-birch-diagonal-x	axis-pair	220	100	165	2	connected route beside the same-sheet forced-tile0 route
+359	axis-pair-birch-diagonal-y	axis-pair	224	100	165	2	connected route beside the same-sheet forced-tile0 route
+360	axis-pair-birch-diagonal-z	axis-pair	228	100	165	2	connected route beside the same-sheet forced-tile0 route
+361	axis-pair-crimson-large-x	axis-pair	220	100	168	2	connected route beside the same-sheet forced-tile0 route
+362	axis-pair-crimson-large-y	axis-pair	224	100	168	2	connected route beside the same-sheet forced-tile0 route
+363	axis-pair-crimson-large-z	axis-pair	228	100	168	2	connected route beside the same-sheet forced-tile0 route
+364	axis-pair-dark_oak-panes-x	axis-pair	220	100	171	2	connected route beside the same-sheet forced-tile0 route
+365	axis-pair-dark_oak-panes-y	axis-pair	224	100	171	2	connected route beside the same-sheet forced-tile0 route
+366	axis-pair-dark_oak-panes-z	axis-pair	228	100	171	2	connected route beside the same-sheet forced-tile0 route
+367	axis-pair-jungle-rounded-x	axis-pair	220	100	174	2	connected route beside the same-sheet forced-tile0 route
+368	axis-pair-jungle-rounded-y	axis-pair	224	100	174	2	connected route beside the same-sheet forced-tile0 route
+369	axis-pair-jungle-rounded-z	axis-pair	228	100	174	2	connected route beside the same-sheet forced-tile0 route
+370	axis-pair-mangrove-slim-x	axis-pair	220	100	177	2	connected route beside the same-sheet forced-tile0 route
+371	axis-pair-mangrove-slim-y	axis-pair	224	100	177	2	connected route beside the same-sheet forced-tile0 route
+372	axis-pair-mangrove-slim-z	axis-pair	228	100	177	2	connected route beside the same-sheet forced-tile0 route
+373	axis-pair-oak-swirling-x	axis-pair	220	100	180	2	connected route beside the same-sheet forced-tile0 route
+374	axis-pair-oak-swirling-y	axis-pair	224	100	180	2	connected route beside the same-sheet forced-tile0 route
+375	axis-pair-oak-swirling-z	axis-pair	228	100	180	2	connected route beside the same-sheet forced-tile0 route
+376	axis-pair-spruce-tiles-x	axis-pair	220	100	183	2	connected route beside the same-sheet forced-tile0 route
+377	axis-pair-spruce-tiles-y	axis-pair	224	100	183	2	connected route beside the same-sheet forced-tile0 route
+378	axis-pair-spruce-tiles-z	axis-pair	228	100	183	2	connected route beside the same-sheet forced-tile0 route
+379	axis-pair-warped-bars-x	axis-pair	220	100	186	2	connected route beside the same-sheet forced-tile0 route
+380	axis-pair-warped-bars-y	axis-pair	224	100	186	2	connected route beside the same-sheet forced-tile0 route
+381	axis-pair-warped-bars-z	axis-pair	228	100	186	2	connected route beside the same-sheet forced-tile0 route
+382	axis-x-same-state-continuity	axis-topology	238	100	174	2	same-state x-axis continuity
+383	axis-y-same-state-continuity	axis-topology	244	100	174	2	same-state y-axis continuity
+384	axis-z-same-state-continuity	axis-topology	250	100	174	2	same-state z-axis continuity
+385	axis-state-mismatch	axis-topology	238	100	180	3	adjacent x/y/z states must not satisfy is_same_state
+386	axis-cross-material-layout	axis-topology	244	100	180	2	different material/layout IDs are deliberate non-connections
+387	axis-connected-versus-forced-tile0	axis-topology	250	100	180	2	same sheet but distinct route ownership; ordinary block stays tile 0
+388	cube-top-slab	shape-topology	238	100	190	2	top slab participates in the cube top-face predicate
+389	cube-bottom-slab-control	shape-topology	242	100	190	2	bottom slab is the complementary top-face non-connection control
+390	cube-double-slab	shape-topology	246	100	190	2	double slab participates as a full block
+391	cube-stair	shape-topology	250	100	190	2	same-family stair participates in cross-shape connectivity
+392	top-slab-pair	shape-topology	238	100	194	2	same-state top slab continuity
+393	bottom-slab-pair	shape-topology	242	100	194	2	same-state bottom slab continuity
+394	straight-stair-pair	shape-topology	246	100	194	2	same-family straight stair continuity
+395	cross-sheet-control	shape-topology	250	100	194	2	different texture sheets are a deliberate non-connection
+396	forced-disconnected-adjacent-same-id-simple	forced-disconnected-adjacency	238	100	200	2	adjacent same-ID ordinary SIMPLE routes both remain tile 0
+397	forced-disconnected-adjacent-same-id-full	forced-disconnected-adjacency	244	100	200	2	adjacent same-ID ordinary FULL routes both remain tile 0
+398	mechanical-chisel-down-axis-false-flipped-false	mechanical-chisel	220	100	198	1	neutral empty shaft; vertical facings include the visible chisel tool
+399	mechanical-chisel-down-axis-false-flipped-true	mechanical-chisel	224	100	198	1	neutral empty shaft; vertical facings include the visible chisel tool
+400	mechanical-chisel-down-axis-true-flipped-false	mechanical-chisel	228	100	198	1	neutral empty shaft; vertical facings include the visible chisel tool
+401	mechanical-chisel-down-axis-true-flipped-true	mechanical-chisel	232	100	198	1	neutral empty shaft; vertical facings include the visible chisel tool
+402	mechanical-chisel-up-axis-false-flipped-false	mechanical-chisel	220	100	202	1	neutral empty shaft; vertical facings include the visible chisel tool
+403	mechanical-chisel-up-axis-false-flipped-true	mechanical-chisel	224	100	202	1	neutral empty shaft; vertical facings include the visible chisel tool
+404	mechanical-chisel-up-axis-true-flipped-false	mechanical-chisel	228	100	202	1	neutral empty shaft; vertical facings include the visible chisel tool
+405	mechanical-chisel-up-axis-true-flipped-true	mechanical-chisel	232	100	202	1	neutral empty shaft; vertical facings include the visible chisel tool
+406	mechanical-chisel-north-axis-false-flipped-false	mechanical-chisel	220	100	206	1	neutral empty shaft; vertical facings include the visible chisel tool
+407	mechanical-chisel-north-axis-false-flipped-true	mechanical-chisel	224	100	206	1	neutral empty shaft; vertical facings include the visible chisel tool
+408	mechanical-chisel-north-axis-true-flipped-false	mechanical-chisel	228	100	206	1	neutral empty shaft; vertical facings include the visible chisel tool
+409	mechanical-chisel-north-axis-true-flipped-true	mechanical-chisel	232	100	206	1	neutral empty shaft; vertical facings include the visible chisel tool
+410	mechanical-chisel-south-axis-false-flipped-false	mechanical-chisel	220	100	210	1	neutral empty shaft; vertical facings include the visible chisel tool
+411	mechanical-chisel-south-axis-false-flipped-true	mechanical-chisel	224	100	210	1	neutral empty shaft; vertical facings include the visible chisel tool
+412	mechanical-chisel-south-axis-true-flipped-false	mechanical-chisel	228	100	210	1	neutral empty shaft; vertical facings include the visible chisel tool
+413	mechanical-chisel-south-axis-true-flipped-true	mechanical-chisel	232	100	210	1	neutral empty shaft; vertical facings include the visible chisel tool
+414	mechanical-chisel-west-axis-false-flipped-false	mechanical-chisel	220	100	214	1	neutral empty shaft; vertical facings include the visible chisel tool
+415	mechanical-chisel-west-axis-false-flipped-true	mechanical-chisel	224	100	214	1	neutral empty shaft; vertical facings include the visible chisel tool
+416	mechanical-chisel-west-axis-true-flipped-false	mechanical-chisel	228	100	214	1	neutral empty shaft; vertical facings include the visible chisel tool
+417	mechanical-chisel-west-axis-true-flipped-true	mechanical-chisel	232	100	214	1	neutral empty shaft; vertical facings include the visible chisel tool
+418	mechanical-chisel-east-axis-false-flipped-false	mechanical-chisel	220	100	218	1	neutral empty shaft; vertical facings include the visible chisel tool
+419	mechanical-chisel-east-axis-false-flipped-true	mechanical-chisel	224	100	218	1	neutral empty shaft; vertical facings include the visible chisel tool
+420	mechanical-chisel-east-axis-true-flipped-false	mechanical-chisel	228	100	218	1	neutral empty shaft; vertical facings include the visible chisel tool
+421	mechanical-chisel-east-axis-true-flipped-true	mechanical-chisel	232	100	218	1	neutral empty shaft; vertical facings include the visible chisel tool
+422	ownership-parent-rechiseled	ownership-control	252	100	198	1	parent Rechiseled add-on ownership/fallback control
+423	ownership-parent-create	ownership-control	252	100	202	1	parent Create add-on ownership/fallback control
+424	ownership-vanilla	ownership-control	252	100	206	1	untouched vanilla stock renderer control

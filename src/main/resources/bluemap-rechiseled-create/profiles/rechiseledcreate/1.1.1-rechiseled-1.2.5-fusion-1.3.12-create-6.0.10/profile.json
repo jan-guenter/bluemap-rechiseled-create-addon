@@ -1,0 +1,88 @@
+{
+  "assetPolicy": "operator-installed-only",
+  "counts": {
+    "allBlockstates": 242,
+    "bridgeResourceClosure": 1038,
+    "customFusionModels": 432,
+    "directModels": 510,
+    "forcedDisconnectedBlocks": 78,
+    "forcedDisconnectedLegalStates": 224,
+    "fusionMetadata": 107,
+    "fusionRoutedBlocks": 163,
+    "fusionRoutedLegalStates": 2661,
+    "hostGeometryModels": 9,
+    "mechanicalChiselResources": 16,
+    "mechanicalChiselStates": 24,
+    "mechanicalChiselTextures": 9,
+    "modelClosure": 513,
+    "resourceClosure": 1041,
+    "routedBlocks": 242,
+    "routedLegalStates": 2909,
+    "stockBlocks": 0,
+    "textures": 180
+  },
+  "digests": {
+    "definitions": "6eb10848b97ec6b84f4d70857a781de60185631d757def1fd5d23ff502cbe779",
+    "directModelRoster": "b13339c3585e73a56684fad1c8b8a6864cd6ff4622d1ac0c16a26acdde27caec",
+    "disconnectedDefinitions": "62fe770aef64681963418cc386834c32f36a0ad1086deaa4aa26af152ac70958",
+    "forcedDisconnectedLegalStates": "937cb1781ba4a2b0a2613f6611cf3fdf448b15d88dd57c5a3cd9cb415661f70c",
+    "forcedDisconnectedRoster": "22cf503d5e0cff2fe560262a7d0c9fb92f47501a3ebcaec46f0e83ae37b52ef7",
+    "forcedDisconnectedSheetRoster": "5a5a6a3eadce26b480c6c0ce38077c8f850eb5e2830bc586e250a38b4f14bdcb",
+    "hostGeometryModels": "edde9209002e63eb5a989daa489cb36edb579806473f66baac4dfe56c07c8b80",
+    "legalStateRoster": "7b76090d1635400a1a4669bd7c7deb007e342334ac0223db42b48eccf0f6d6ff",
+    "mechanicalChiselLegalStates": "3559dec895fd98172d43fd337a8063976ec5de51712d9e69c5db2be7f535dbba",
+    "mechanicalChiselResources": "7399a454ec55f3803a54ed7d6f3649c3bd907682950f8078c173b26a3e49eecb",
+    "mechanicalChiselTextures": "168b86e50c5a5e03438e46e3bd81fb54536c60a119d37875a621b93df2b78481",
+    "metadataRoster": "3a5d591130fb28a7bd5cecb95368b3982d37a3c2070f727214c40cfa9e4a8139",
+    "modelRoster": "502f78b5b42d94c9dd549293ed89b161346411e8345c4355259c46aa17a03eb9",
+    "pngRoster": "507c4fdaeac67cc6edbcd181767a999fe818a384ad5fe7bba1c3c90c95de35f5",
+    "predicateConnectedLegalStates": "a9b43dd48984f82d691d68678d583852d5c34ca09c0a07db2ba512ca85d98daf",
+    "predicateConnectedRoster": "6f9310b3166c4946d25a71461abf538eee7d65909f73326e4a434f0259ac2427",
+    "requiredResources": "a24f92113ced8ad9de0c24d01cf89f4ae3b10c24cd5f77f7ef0f4041980b22ed",
+    "resourcePathClosure": "b3e8603aabcb54f4fc51f36b3396880bd03ca0cd51fc60beec0e15e4fd701fb5",
+    "routedRoster": "107fe5e07bf81062245408be8e3cb9e8b84e479a2d6eff8f4bb4341e18457747",
+    "textures": "c7a0d3ee167b2344054e72c740f4e374f0928d9f6dbda64a9c83d79bf1fb8001"
+  },
+  "failurePolicy": "route-wide-inactive-or-atomic-stock-fallback",
+  "formatOwner": "fusion",
+  "geometryDependencies": [
+    "create",
+    "rechiseled",
+    "minecraft"
+  ],
+  "hostGeometryAbi": {
+    "clientJarSha256": "499f6897d1837516680f3114072d8106e11c9adcd933fe5cf051b551089b0c99",
+    "owner": "minecraft",
+    "pathsAreOutsideBridgeClosure": true
+  },
+  "layouts": {
+    "full": 42,
+    "plain": 73,
+    "simple": 65
+  },
+  "namespaceOwner": "rechiseledcreate",
+  "predicateTypes": [
+    "fusion:and",
+    "fusion:is_direction",
+    "fusion:is_same_state",
+    "fusion:match_block",
+    "fusion:match_state",
+    "fusion:or"
+  ],
+  "profileId": "rechiseledcreate-1.1.1-atm-1.2.0",
+  "schema": 1,
+  "shapes": {
+    "forcedDisconnected": {
+      "axis": 73,
+      "full": 5,
+      "slab": 0,
+      "stairs": 0
+    },
+    "predicateConnected": {
+      "axis": 73,
+      "full": 34,
+      "slab": 28,
+      "stairs": 28
+    }
+  }
+}
