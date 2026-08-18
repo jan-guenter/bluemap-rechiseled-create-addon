@@ -70,16 +70,58 @@ jobs:
         with:
           gradle-version: '9.6.1'
 
+      - name: Acquire exact ephemeral runtime inputs
+        run: |
+          input_dir="${RUNNER_TEMP}/rechiseled-create-inputs"
+          mkdir -p "${input_dir}"
+          curl --fail --location --retry 3 --retry-all-errors \
+            --output "${input_dir}/rechiseledcreate-1.1.1-neoforge-mc1.21.jar" \
+            "https://cdn.modrinth.com/data/E6867niZ/versions/VnOezhJR/rechiseledcreate-1.1.1-neoforge-mc1.21.jar"
+          curl --fail --location --retry 3 --retry-all-errors \
+            --output "${input_dir}/rechiseled-1.2.5-neoforge-mc1.21.jar" \
+            "https://cdn.modrinth.com/data/B0g2vT6l/versions/S5FnErRw/rechiseled-1.2.5-neoforge-mc1.21.jar"
+          curl --fail --location --retry 3 --retry-all-errors \
+            --output "${input_dir}/fusion-1.3.12-neoforge-mc1.21.1.jar" \
+            "https://cdn.modrinth.com/data/p19vrgc2/versions/6Oxgpgr9/fusion-1.3.12-neoforge-mc1.21.1.jar"
+          curl --fail --location --retry 3 --retry-all-errors \
+            --output "${input_dir}/create-1.21.1-6.0.10.jar" \
+            "https://cdn.modrinth.com/data/LNytGWDc/versions/UjX6dr61/create-1.21.1-6.0.10.jar"
+          (
+            cd "${input_dir}"
+            test "$(stat -c %s rechiseledcreate-1.1.1-neoforge-mc1.21.jar)" \
+              -eq 983177
+            test "$(stat -c %s rechiseled-1.2.5-neoforge-mc1.21.jar)" \
+              -eq 11498611
+            test "$(stat -c %s fusion-1.3.12-neoforge-mc1.21.1.jar)" \
+              -eq 923270
+            test "$(stat -c %s create-1.21.1-6.0.10.jar)" \
+              -eq 19123767
+            sha256sum --check <<'SHA256SUMS'
+          ba89cd5d1221621ed226cc7f1c26dc84a660cc4f6d122753052429f96d71248d  rechiseledcreate-1.1.1-neoforge-mc1.21.jar
+          7bf14cf8a4bfdc4b6c990126a75da29fd2bb7559d1c05b71e29c8fd5ae044435  rechiseled-1.2.5-neoforge-mc1.21.jar
+          17f5215648a98bcde4134577b013200dbf363273ae282449c51408ae8346f2fa  fusion-1.3.12-neoforge-mc1.21.1.jar
+          ef87fe5709f1ba1f5b8bb20a2925b5afb4669e178fd6d8bf10c167759eefe37a  create-1.21.1-6.0.10.jar
+          SHA256SUMS
+          )
+
       - name: Build and verify accepted bytes
         run: |
+          input_dir="${RUNNER_TEMP}/rechiseled-create-inputs"
           python3 -m json.tool provenance/upstreams.json >/dev/null
           python3 -m json.tool provenance/release.json >/dev/null
+          python3 gallery/generate.py \
+            --artifact-dir "${input_dir}" --check
+          python3 gallery/lint.py --artifact-dir "${input_dir}"
           python3 -m unittest discover -s tools/tests -p 'test_*.py'
           (cd gallery && sha256sum --check SHA256SUMS)
           gradle --no-daemon \
             -PbluemapSourcePath=.ci/bluemap \
+            -PbridgeJar="${input_dir}/rechiseledcreate-1.1.1-neoforge-mc1.21.jar" \
+            -PrechiseledJar="${input_dir}/rechiseled-1.2.5-neoforge-mc1.21.jar" \
+            -PfusionJar="${input_dir}/fusion-1.3.12-neoforge-mc1.21.1.jar" \
+            -PcreateJar="${input_dir}/create-1.21.1-6.0.10.jar" \
             clean check build generatePomFileForAddonPublication \
-            generateMetadataFileForAddonPublication
+            generateMetadataFileForAddonPublication verifyPinnedArtifacts
           test "$(stat -c %s \
             "build/libs/bluemap-rechiseled-create-addon-${VERSION}-sources.jar")" \
             -eq 126474
@@ -155,8 +197,13 @@ jobs:
           GITHUB_ACTOR: ${{ github.actor }}
           GITHUB_TOKEN: ${{ github.token }}
         run: |
+          input_dir="${RUNNER_TEMP}/rechiseled-create-inputs"
           gradle --no-daemon \
             -PbluemapSourcePath=.ci/bluemap \
+            -PbridgeJar="${input_dir}/rechiseledcreate-1.1.1-neoforge-mc1.21.jar" \
+            -PrechiseledJar="${input_dir}/rechiseled-1.2.5-neoforge-mc1.21.jar" \
+            -PfusionJar="${input_dir}/fusion-1.3.12-neoforge-mc1.21.1.jar" \
+            -PcreateJar="${input_dir}/create-1.21.1-6.0.10.jar" \
             publishAddonPublicationToGitHubPackagesRepository
 
       - name: Verify and publish GitHub release

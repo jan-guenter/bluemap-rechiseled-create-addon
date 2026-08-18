@@ -14,6 +14,13 @@
       "sha256": "651b8be8a41d459f04f3ec1cbc64ba7441cceb3c2bb3c07d518556a11c83596b"
     }
   },
+  "ephemeral_ci_inputs": {
+    "rechiseledcreate": "Modrinth E6867niZ/VnOezhJR",
+    "rechiseled": "Modrinth B0g2vT6l/S5FnErRw",
+    "fusion": "Modrinth p19vrgc2/6Oxgpgr9",
+    "create": "Modrinth LNytGWDc/UjX6dr61",
+    "policy": "Downloaded only into the ephemeral CI runner, size/hash verified before use, and never bundled or uploaded."
+  },
   "release_assets": {
     "sources_jar": {
       "file_name": "bluemap-rechiseled-create-addon-0.1.0-alpha.1-sources.jar",
