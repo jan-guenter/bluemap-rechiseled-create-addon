@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "": {
+      "model": "bluemap:block/missing",
+      "renderer": "bluemap_rechiseled_create:fusion_model"
+    }
+  }
+}

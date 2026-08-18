@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "project_license": "MIT",
+  "status": "unreleased-prototype",
+  "implementation_lane": "independent-mit-code-plus-runtime-installed-resource-interpreter",
+  "baseline": {
+    "pack": "All the Mons 1.2.0",
+    "pack_commit": "c7bb230f21d14d26859d0b92548f089b3a493ad9",
+    "minecraft": "1.21.1",
+    "neoforge": "21.1.248",
+    "java": 21
+  },
+  "bluemap": {
+    "backport_version": "5.22-agent.backport-5.22-mc1.21.1-2",
+    "backport_commit": "9be321df995a1103808621d529eb72773e719d4d",
+    "release_jar_sha256": "749f7647fa29764cea113114a7ab3259271bab3da22720989f2bd9fd1f3ba150",
+    "declared_license": "MIT",
+    "license_notice": "META-INF/LICENSE-BlueMap",
+    "bundled": false
+  },
+  "implementation_sources": [
+    {
+      "name": "BlueMap Rechiseled Add-on",
+      "repository": "https://github.com/jan-guenter/bluemap-rechiseled-addon",
+      "commit": "a5530b3178022c2ba755c3d275debc6adcd47e42",
+      "declared_license": "MIT",
+      "role": "Fusion interpreter, resource validation, geometry emission, activation, and test scaffold",
+      "bundled": false
+    }
+  ],
+  "artifacts": {
+    "rechiseledcreate": {
+      "version": "1.1.1",
+      "file_name": "rechiseledcreate-1.1.1-neoforge-mc1.21.jar",
+      "size": 983177,
+      "sha1": "6f7e53f39eb477d7cee8e21af215cd3db698deda",
+      "sha256": "ba89cd5d1221621ed226cc7f1c26dc84a660cc4f6d122753052429f96d71248d",
+      "declared_license": "All rights reserved",
+      "bundled": false
+    },
+    "rechiseled": {
+      "version": "1.2.5",
+      "file_name": "rechiseled-1.2.5-neoforge-mc1.21.jar",
+      "size": 11498611,
+      "sha1": "ed2973c6952caa3173259314276b5b9d72880494",
+      "sha256": "7bf14cf8a4bfdc4b6c990126a75da29fd2bb7559d1c05b71e29c8fd5ae044435",
+      "declared_license": "All rights reserved",
+      "bundled": false
+    },
+    "fusion": {
+      "version": "1.3.12",
+      "file_name": "fusion-1.3.12-neoforge-mc1.21.1.jar",
+      "size": 923270,
+      "sha1": "79c0c6b6a2d9c9a04298df9a88bb71a93e885235",
+      "sha256": "17f5215648a98bcde4134577b013200dbf363273ae282449c51408ae8346f2fa",
+      "declared_license": "All rights reserved",
+      "bundled": false
+    },
+    "create": {
+      "version": "6.0.10",
+      "file_name": "create-1.21.1-6.0.10.jar",
+      "size": 19123767,
+      "sha1": "0e97e49837bed766e6f28a4c95b04885d6acc353",
+      "sha256": "ef87fe5709f1ba1f5b8bb20a2925b5afb4669e178fd6d8bf10c167759eefe37a",
+      "declared_license": "Read attached LICENSE.md",
+      "bundled": false
+    }
+  },
+  "coverage": {
+    "routed_block_ids": 242,
+    "routed_legal_states": 2909,
+    "predicate_connected_ids": 163,
+    "forced_disconnected_ids": 78,
+    "mechanical_chisel_ids": 1,
+    "direct_models": 510,
+    "custom_fusion_models": 432,
+    "model_closure": 513,
+    "bridge_resource_closure": 1038,
+    "fusion_resource_closure": 1041,
+    "host_model_abi": 9,
+    "mechanical_chisel_resource_closure": 16
+  },
+  "third_party_code_bundled": false,
+  "third_party_assets_bundled": false
+}

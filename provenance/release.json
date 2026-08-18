@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "status": "owner-accepted-release-candidate",
+  "version": "0.1.0-alpha.1",
+  "release_date": "2026-08-18",
+  "repository": "https://github.com/jan-guenter/bluemap-rechiseled-create-addon",
+  "tag": "v0.1.0-alpha.1",
+  "maven_coordinate": "io.github.jan-guenter:bluemap-rechiseled-create-addon:0.1.0-alpha.1",
+  "accepted_implementation": {
+    "commit": "06e15778a465dc15c74e8c3b26aa258f415efc61",
+    "production_jar": {
+      "file_name": "bluemap-rechiseled-create-addon-0.1.0-alpha.1.jar",
+      "size": 209444,
+      "sha256": "651b8be8a41d459f04f3ec1cbc64ba7441cceb3c2bb3c07d518556a11c83596b"
+    }
+  },
+  "release_assets": {
+    "sources_jar": {
+      "file_name": "bluemap-rechiseled-create-addon-0.1.0-alpha.1-sources.jar",
+      "size": 126474,
+      "sha256": "c64d5b21eabe488ed6b5c1dc8584fefb172f2a247cb8c29847374a26b8030a9f"
+    },
+    "pom": {
+      "file_name": "bluemap-rechiseled-create-addon-0.1.0-alpha.1.pom",
+      "size": 1378,
+      "sha256": "9bf59963958a7a595e0c520d66565280327e14cf0f9e692e7884feee169197e1"
+    },
+    "gradle_module": {
+      "file_name": "bluemap-rechiseled-create-addon-0.1.0-alpha.1.module.json",
+      "size": 2890,
+      "sha256": "cda1e40a526407a50312aee37e0fc277f6029ba4dcb29f6cd9094cc5aa1dd1ff"
+    },
+    "sha256sums": {
+      "file_name": "SHA256SUMS",
+      "size": 488,
+      "sha256": "a415cfac6dcb5f642f9c77af0f24fd5a3e6a98d1a6c1bfea0b4523c75f6d1697"
+    }
+  },
+  "gallery": {
+    "source_path": "gallery/",
+    "archive_file_name": "bluemap-rechiseledcreate-gallery-scope-audit-frozen.zip",
+    "size": 13516,
+    "sha256": "f5084c9b24d9645565b9e6708ee3ac10ea004ecacf7e2a45d6e85b3e5490ac4c",
+    "logical_cases": 425,
+    "unique_placements": 627,
+    "assertions_per_phase": 645,
+    "phases": 3,
+    "owner_visual_acceptance": true,
+    "third_party_assets_bundled": false,
+    "published_as_release_asset": false
+  },
+  "verification": {
+    "java_tests": 36,
+    "python_tests": 5,
+    "production_jar_exact_byte_gate": true,
+    "gallery_archive_exact_byte_gate": true
+  },
+  "immutable_packaged_provenance": {
+    "path": "provenance/upstreams.json",
+    "note": "This implementation-time manifest is packaged in the accepted JAR and remains byte-frozen. Release-only identities are recorded in this separate repository manifest."
+  }
+}

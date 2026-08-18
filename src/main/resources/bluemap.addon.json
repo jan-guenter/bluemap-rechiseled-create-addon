@@ -1,0 +1,8 @@
+{
+  "id": "bluemap_rechiseled_create",
+  "name": "BlueMap Rechiseled Create Add-on",
+  "entrypoint": "io.github.janguenter.bluemap.rechiseledcreate.BlueMapRechiseledCreateAddon",
+  "version": "${version}",
+  "dependencies": [],
+  "soft-dependencies": []
+}

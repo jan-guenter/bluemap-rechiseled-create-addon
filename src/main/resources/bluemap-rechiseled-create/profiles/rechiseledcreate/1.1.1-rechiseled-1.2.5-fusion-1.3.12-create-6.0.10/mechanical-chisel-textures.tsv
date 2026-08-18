@@ -1,0 +1,9 @@
+create:block/andesite_casing_short	plain	16	16	-
+create:block/axis	plain	16	16	-
+create:block/axis_top	plain	16	16	-
+create:block/encased_chain_drive	plain	16	16	-
+create:block/gearbox	plain	16	16	-
+create:block/gearbox_top	plain	16	16	-
+create:block/mechanical_saw_top	plain	16	16	-
+create:block/mechanical_saw_top_no_slot	plain	16	16	-
+rechiseled:item/chisel	plain	16	16	-
