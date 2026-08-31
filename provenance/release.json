@@ -1,7 +1,8 @@
 {
   "schema_version": 1,
-  "status": "unpublished-migration-candidate",
+  "status": "owner-accepted-release-candidate",
   "published": false,
+  "owner_acceptance": "accepted",
   "version": "0.1.0-alpha.2",
   "release_date": "2026-08-31",
   "repository": "https://github.com/jan-guenter/bluemap-rechiseled-create-addon",
@@ -123,6 +124,77 @@
     "gallery_integrity": true,
     "checkstyle": true,
     "actionlint": true,
-    "release_identity_sealed": false
+    "release_identity_sealed": true,
+    "aggregate_runtime_suite": true,
+    "owner_visual_acceptance": true
+  },
+  "owner_accepted_staging": {
+    "visual_acceptance": true,
+    "accepted_on": "2026-08-31",
+    "scope": "Owner accepted the Rechiseled: Create view in the five-add-on aggregate batch.",
+    "integration_run": "bluemap-atmons-integration-20260831-next-batch-523-native",
+    "local_candidate_base": {
+      "source_commit": "4fc3a83e8d00a360e4cc112977d85862436a0f89",
+      "file_name": "bluemap-rechiseled-create-addon-0.1.0-alpha.2.jar",
+      "size": 213503,
+      "sha256": "8e1c5709698e1a2a8313935a4ac138eefc5465c2ec885526b714c706705c99f8"
+    },
+    "integration_runtime_overlay": {
+      "file_name": "bluemap-rechiseled-create-addon-0.1.0-alpha.1.jar",
+      "size": 213555,
+      "sha256": "0344cfbd872e2bbc2ceccdaaec52a1861cbc3433e69106c59320f3b84aa700f4",
+      "only_changed_entry": "io/github/janguenter/bluemap/rechiseledcreate/BlueMapRechiseledCreateAddon.class",
+      "unchanged_archive_entries": 83
+    },
+    "runtime_suite": {
+      "file_name": "runtime-suite.json",
+      "sha256": "140a3128a37b4cda7d858f41466e7a8b8d4ac8c2e6269d38f46355834e9348ee",
+      "status": "passed",
+      "gallery_count": 51,
+      "passed": 51,
+      "failed": 0,
+      "candidate_manifest_sha256": "87c9fa61548c109a770bce5dfb8867b6d8c2985b0f9c7b42b0da5c14b936f432",
+      "candidate_pack_inventory_sha256": "8db4f362fad57b3f45b19ebb83bc6349c6869b91d429620432728816a86b2bac",
+      "runtime_attestation_sha256": "ed21fafd20230e838ce378d1783be66569893243ce63c98221686f873be4a9b8"
+    },
+    "gallery_render": {
+      "map_id": "atmons_integration",
+      "composition_id": "2b54af980b42ec29eaf6a5747c9f31157d2b6208fcbb5a8083c982d9387b1c7f",
+      "layout_sha256": "390ad0b3e559dd6545c9ef8400bd2c4879fed35039b0fcdfcc0411e6ee17a8c0",
+      "fresh_tile_evidence_sha256": "ed107c3f407e5667a5cf4b8b32edb60f090242863501418a19bfdbf76397cf89",
+      "region_count": 4,
+      "tile_count": 589
+    },
+    "browser_capture": {
+      "screenshot_sha256": "0fa5008ce95847d380eee9d579b74a5d8cdb8dedd084f733eb3fa1af04fefb4e",
+      "navigation_status": 200
+    }
+  },
+  "final_release_artifacts": {
+    "production_jar": {
+      "file_name": "bluemap-rechiseled-create-addon-0.1.0-alpha.2.jar",
+      "size": 213503,
+      "sha256": "8e1c5709698e1a2a8313935a4ac138eefc5465c2ec885526b714c706705c99f8"
+    },
+    "sources_jar": {
+      "file_name": "bluemap-rechiseled-create-addon-0.1.0-alpha.2-sources.jar",
+      "size": 129854,
+      "sha256": "d632c5a949b9e2f6ecb44aee39303180ffbe3e6690fc8d154041a3fd52ab75d6"
+    },
+    "pom": {
+      "file_name": "bluemap-rechiseled-create-addon-0.1.0-alpha.2.pom",
+      "size": 1378,
+      "sha256": "66070ef375d7a566fba39c4930bd92b3db8cb3cfad7e20b515efc5db391d97b3"
+    },
+    "gradle_module": {
+      "file_name": "bluemap-rechiseled-create-addon-0.1.0-alpha.2.module.json",
+      "size": 2890,
+      "sha256": "07b572675081739626b63246d0eb0da973aadfea4ae8da32971bdb934b59c216"
+    },
+    "checksum_sidecar": {
+      "file_name": "SHA256SUMS",
+      "size": 488,
+      "sha256": "333ff1c288feab7c218e3d11907f00810a4b9410a0868b6dd8fa680ad6a77a6b"
+    }
   }
 }

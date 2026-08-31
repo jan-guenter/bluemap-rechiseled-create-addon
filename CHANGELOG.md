@@ -10,6 +10,9 @@
 - Compile released Fusion resource-model source module `0.1.0-alpha.1` and
   remove the four duplicate local model implementations.
 - Preserve the accepted 242-ID/2,909-state profile and 425-case gallery.
+- Pass the combined 51-gallery integration suite and fresh four-region render.
+- Receive owner visual acceptance and authorization to publish the exact
+  sealed `0.1.0-alpha.2` assets.
 
 ## 0.1.0-alpha.1 - 2026-08-18
 

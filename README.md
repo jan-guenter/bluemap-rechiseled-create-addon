@@ -11,7 +11,9 @@ is exactly 209,444 bytes with SHA-256
 `651b8be8a41d459f04f3ec1cbc64ba7441cceb3c2bb3c07d518556a11c83596b`.
 Compatibility outside the exact inputs below is not asserted.
 
-Version `0.1.0-alpha.2` is an unpublished BlueMap 5.23 migration candidate.
+Version `0.1.0-alpha.2` is the owner-accepted BlueMap 5.23 release candidate.
+Its exact production JAR is 213,503 bytes with SHA-256
+`8e1c5709698e1a2a8313935a4ac138eefc5465c2ec885526b714c706705c99f8`.
 It preserves the accepted profile, gallery, and renderer behavior while moving
 the adapter boundary to `bluemap523`. It compiles the exact Adapter API
 `0.1.0-alpha.2` and released Fusion resource-model `0.1.0-alpha.1` source

@@ -125,16 +125,16 @@ jobs:
             generateMetadataFileForAddonPublication
           test "$(stat -c %s \
             "build/libs/bluemap-rechiseled-create-addon-${VERSION}-sources.jar")" \
-            -eq 126474
+            -eq 129854
           test "$(stat -c %s build/publications/addon/pom-default.xml)" \
             -eq 1378
           test "$(stat -c %s build/publications/addon/module.json)" \
             -eq 2890
           sha256sum --check <<SHA256SUMS
-          651b8be8a41d459f04f3ec1cbc64ba7441cceb3c2bb3c07d518556a11c83596b  build/libs/bluemap-rechiseled-create-addon-${VERSION}.jar
-          c64d5b21eabe488ed6b5c1dc8584fefb172f2a247cb8c29847374a26b8030a9f  build/libs/bluemap-rechiseled-create-addon-${VERSION}-sources.jar
-          9bf59963958a7a595e0c520d66565280327e14cf0f9e692e7884feee169197e1  build/publications/addon/pom-default.xml
-          cda1e40a526407a50312aee37e0fc277f6029ba4dcb29f6cd9094cc5aa1dd1ff  build/publications/addon/module.json
+          8e1c5709698e1a2a8313935a4ac138eefc5465c2ec885526b714c706705c99f8  build/libs/bluemap-rechiseled-create-addon-${VERSION}.jar
+          d632c5a949b9e2f6ecb44aee39303180ffbe3e6690fc8d154041a3fd52ab75d6  build/libs/bluemap-rechiseled-create-addon-${VERSION}-sources.jar
+          66070ef375d7a566fba39c4930bd92b3db8cb3cfad7e20b515efc5db391d97b3  build/publications/addon/pom-default.xml
+          07b572675081739626b63246d0eb0da973aadfea4ae8da32971bdb934b59c216  build/publications/addon/module.json
           SHA256SUMS
 
       - name: Reproduce accepted gallery archive
@@ -169,7 +169,7 @@ jobs:
           (cd release && sha256sum --check SHA256SUMS)
           test "$(stat -c %s release/SHA256SUMS)" -eq 488
           test "$(sha256sum release/SHA256SUMS | cut -d ' ' -f 1)" = \
-            a415cfac6dcb5f642f9c77af0f24fd5a3e6a98d1a6c1bfea0b4523c75f6d1697
+            333ff1c288feab7c218e3d11907f00810a4b9410a0868b6dd8fa680ad6a77a6b
 
       - name: Create or refresh draft release
         env:
