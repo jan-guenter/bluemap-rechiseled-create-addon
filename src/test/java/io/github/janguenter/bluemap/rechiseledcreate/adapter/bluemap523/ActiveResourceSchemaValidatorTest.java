@@ -1,7 +1,7 @@
 /*
  * SPDX-License-Identifier: MIT
  */
-package io.github.janguenter.bluemap.rechiseledcreate.adapter.bluemap522;
+package io.github.janguenter.bluemap.rechiseledcreate.adapter.bluemap523;
 
 import io.github.janguenter.bluemap.rechiseledcreate.profile.TextureCatalog;
 import io.github.janguenter.bluemap.rechiseledcreate.profile.TextureLayout;

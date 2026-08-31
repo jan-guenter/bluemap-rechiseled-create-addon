@@ -6,14 +6,22 @@ workspace and portfolio guides, this README, `docs/ARCHITECTURE.md`, and
 
 ## Boundaries
 
-- Java 21, Minecraft 1.21.1, BlueMap 5.22 backport commit
-  `9be321df995a1103808621d529eb72773e719d4d`.
+- Java 21, Minecraft 1.21.1, and only BlueMap feature-backport commit
+  `7e07f4e74ec1e92a6ead9aa1e66054af3e133aac`, API commit
+  `285c9a60eff3ac2b0cab308ce1058d1565be0971`.
+- Compile the four Adapter API sources from gitlink
+  `e81f08bc4bfbf02d810ec8949a019130e2e61634`, source tree
+  `2f974c9bb2ba13888d69682f86f30f58922d30eb`, and the five Fusion model
+  sources from released gitlink `3ddd5d39bb7cc8664c242aedd849a636316075c2`,
+  source tree `6e85031ff2f0e7417a7a2fb0babbf7ed5a4f218a`. Never bundle either
+  standalone module JAR.
 - Own all and only the 242 exact `rechiseledcreate:*` block IDs: 163
   predicate-connected blocks, 78 forced-disconnected Fusion-sheet blocks, and
   `mechanical_chisel`.
-- Bundle no Rechiseled: Create, Rechiseled, Fusion, or Create classes, JSON,
-  models, textures, metadata, source, or binaries. Read the operator-installed
-  exact resources at runtime.
+- Bundle no Rechiseled: Create, Rechiseled, Fusion runtime, or Create classes,
+  JSON, models, textures, metadata, source, or binaries. The exact pinned MIT
+  Fusion resource-model sources are deliberately compiled into this add-on;
+  read the operator-installed exact resources at runtime.
 - Structural resources are hash-locked. Pixel-only sheet overrides are allowed
   only at the exact layout dimensions.
 - Preserve stock behavior outside the exact route. Unknown artifacts, schema,

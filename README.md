@@ -11,6 +11,12 @@ is exactly 209,444 bytes with SHA-256
 `651b8be8a41d459f04f3ec1cbc64ba7441cceb3c2bb3c07d518556a11c83596b`.
 Compatibility outside the exact inputs below is not asserted.
 
+Version `0.1.0-alpha.2` is an unpublished BlueMap 5.23 migration candidate.
+It preserves the accepted profile, gallery, and renderer behavior while moving
+the adapter boundary to `bluemap523`. It compiles the exact Adapter API
+`0.1.0-alpha.2` and released Fusion resource-model `0.1.0-alpha.1` source
+modules. Neither standalone support-module JAR is installed.
+
 ## Exact contract
 
 Activation requires all four byte-exact operator-installed artifacts:
@@ -70,6 +76,13 @@ Java 21, Gradle 9.6.1, and the exact local BlueMap backport checkout are
 required.
 
 ```bash
+git submodule update --init --recursive -- \
+  tooling/bluemap-addon-toolkit \
+  modules/bluemap-addon-adapter-api \
+  modules/bluemap-fusion-resource-models
+```
+
+```bash
 python3 tools/verify_pinned_artifacts.py \
   --bridge /absolute/path/rechiseledcreate-1.1.1-neoforge-mc1.21.jar \
   --rechiseled /absolute/path/rechiseled-1.2.5-neoforge-mc1.21.jar \
@@ -81,12 +94,13 @@ gradle --no-daemon \
   -PrechiseledJar=/absolute/path/rechiseled-1.2.5-neoforge-mc1.21.jar \
   -PfusionJar=/absolute/path/fusion-1.3.12-neoforge-mc1.21.1.jar \
   -PcreateJar=/absolute/path/create-1.21.1-6.0.10.jar \
-  clean check build generatePomFileForAddonPublication \
-  generateMetadataFileForAddonPublication verifyPinnedArtifacts
+  clean prototypeCheck build generatePomFileForAddonPublication \
+  generateMetadataFileForAddonPublication
 ```
 
-`check` rejects a production JAR that differs from the accepted size or
-SHA-256. The accepted implementation passed 36 Java tests and five Python
+`check` verifies the exact package boundaries. Release promotion separately
+seals the owner-accepted production and source JARs, POM, and Gradle metadata.
+The published alpha.1 implementation passed 36 Java tests and five Python
 tests. Tagged releases publish the production and source JARs, POM, Gradle
 module metadata, and checksums at Maven coordinate
 `io.github.jan-guenter:bluemap-rechiseled-create-addon:<version>`. The tag must
@@ -111,7 +125,8 @@ runtime inputs. The add-on writes no world or player data.
 
 ## Licensing
 
-Project code and generated factual metadata are MIT. The four mod artifacts are
+Project code, both pinned shared source sets, and generated factual metadata
+are MIT. The four mod artifacts are
 operator-installed inputs only; none of their code, classes, JSON, models,
 textures, metadata, source, or binaries are redistributed. BlueMap-derived MIT
 renderer mechanics retain attribution. See `LICENSE-BlueMap`,

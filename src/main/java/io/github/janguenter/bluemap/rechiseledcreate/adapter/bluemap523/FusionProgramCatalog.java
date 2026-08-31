@@ -1,14 +1,14 @@
 /*
  * SPDX-License-Identifier: MIT
  */
-package io.github.janguenter.bluemap.rechiseledcreate.adapter.bluemap522;
+package io.github.janguenter.bluemap.rechiseledcreate.adapter.bluemap523;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import de.bluecolored.bluemap.core.util.Key;
-import io.github.janguenter.bluemap.rechiseledcreate.model.FusionDirection;
+import io.github.janguenter.bluemap.resource.fusion.model.FusionDirection;
 
 import java.io.StringReader;
 import java.nio.charset.StandardCharsets;

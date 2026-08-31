@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project_license": "MIT",
-  "status": "unreleased-prototype",
+  "status": "unreleased-migration-candidate",
   "implementation_lane": "independent-mit-code-plus-runtime-installed-resource-interpreter",
   "baseline": {
     "pack": "All the Mons 1.2.0",
@@ -11,9 +11,10 @@
     "java": 21
   },
   "bluemap": {
-    "backport_version": "5.22-agent.backport-5.22-mc1.21.1-2",
-    "backport_commit": "9be321df995a1103808621d529eb72773e719d4d",
-    "release_jar_sha256": "749f7647fa29764cea113114a7ab3259271bab3da22720989f2bd9fd1f3ba150",
+    "backport_version": "5.22-feature.backport-5.23-stateless-java-web-server-46",
+    "backport_commit": "7e07f4e74ec1e92a6ead9aa1e66054af3e133aac",
+    "api_commit": "285c9a60eff3ac2b0cab308ce1058d1565be0971",
+    "release_jar_sha256": "86a0323d24f472e425dda4d4e6bba2d7d8ce8315ad009930a67131128c715e62",
     "declared_license": "MIT",
     "license_notice": "META-INF/LICENSE-BlueMap",
     "bundled": false
@@ -28,6 +29,26 @@
       "bundled": false
     }
   ],
+  "source_modules": {
+    "adapter_api": {
+      "version": "0.1.0-alpha.2",
+      "repository": "https://github.com/jan-guenter/bluemap-addon-adapter-api",
+      "commit": "e81f08bc4bfbf02d810ec8949a019130e2e61634",
+      "source_tree": "2f974c9bb2ba13888d69682f86f30f58922d30eb",
+      "declared_license": "MIT",
+      "exact_source_compiled": true,
+      "standalone_jar_bundled": false
+    },
+    "fusion_resource_models": {
+      "version": "0.1.0-alpha.1",
+      "repository": "https://github.com/jan-guenter/bluemap-fusion-resource-models",
+      "commit": "3ddd5d39bb7cc8664c242aedd849a636316075c2",
+      "source_tree": "6e85031ff2f0e7417a7a2fb0babbf7ed5a4f218a",
+      "declared_license": "MIT",
+      "exact_source_compiled": true,
+      "standalone_jar_bundled": false
+    }
+  },
   "artifacts": {
     "rechiseledcreate": {
       "version": "1.1.1",

@@ -55,7 +55,7 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           repository: jan-guenter/BlueMap
-          ref: 9be321df995a1103808621d529eb72773e719d4d
+          ref: 7e07f4e74ec1e92a6ead9aa1e66054af3e133aac
           path: .ci/bluemap
           submodules: recursive
           persist-credentials: false
@@ -121,8 +121,8 @@ jobs:
             -PrechiseledJar="${input_dir}/rechiseled-1.2.5-neoforge-mc1.21.jar" \
             -PfusionJar="${input_dir}/fusion-1.3.12-neoforge-mc1.21.1.jar" \
             -PcreateJar="${input_dir}/create-1.21.1-6.0.10.jar" \
-            clean check build generatePomFileForAddonPublication \
-            generateMetadataFileForAddonPublication verifyPinnedArtifacts
+            clean prototypeCheck build generatePomFileForAddonPublication \
+            generateMetadataFileForAddonPublication
           test "$(stat -c %s \
             "build/libs/bluemap-rechiseled-create-addon-${VERSION}-sources.jar")" \
             -eq 126474

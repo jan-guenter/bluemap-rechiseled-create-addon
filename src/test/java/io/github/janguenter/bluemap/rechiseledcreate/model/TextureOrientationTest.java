@@ -4,6 +4,9 @@
 package io.github.janguenter.bluemap.rechiseledcreate.model;
 
 import de.bluecolored.bluemap.core.util.Direction;
+import io.github.janguenter.bluemap.resource.fusion.model.AxisVector;
+import io.github.janguenter.bluemap.resource.fusion.model.FusionDirection;
+import io.github.janguenter.bluemap.resource.fusion.model.TextureOrientation;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

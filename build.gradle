@@ -14,6 +14,13 @@ base {
     archivesName = artifact_id
 }
 
+sourceSets {
+    main.java.srcDirs(
+            'modules/bluemap-addon-adapter-api/src/main/java',
+            'modules/bluemap-fusion-resource-models/src/main/java'
+    )
+}
+
 repositories {
     mavenCentral()
     maven {
@@ -31,6 +38,10 @@ dependencies {
     testImplementation platform('org.junit:junit-bom:5.11.4')
     testImplementation 'org.junit.jupiter:junit-jupiter'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+tasks.withType(AbstractArchiveTask).configureEach {
+    includeEmptyDirs = false
 }
 
 tasks.named('test', Test).configure {
@@ -110,6 +121,61 @@ tasks.named('sourcesJar', Jar).configure {
 
 def productionJar = tasks.named('jar', Jar).flatMap { it.archiveFile }
 def publishedSourcesJar = tasks.named('sourcesJar', Jar).flatMap { it.archiveFile }
+def sharedAdapterApiPackage =
+        'io/github/janguenter/bluemap/addon/adapter/api/bluemap523/'
+def sharedAdapterApiClasses = [
+        'BlueMapRuntimeCompatibility.class',
+        'RegistryGuard.class',
+        'ResourceExtensionType.class',
+        'SyntheticDispatch.class'
+].collect { sharedAdapterApiPackage + it }
+def sharedAdapterApiSources = [
+        'BlueMapRuntimeCompatibility.java',
+        'RegistryGuard.java',
+        'ResourceExtensionType.java',
+        'SyntheticDispatch.java'
+].collect { sharedAdapterApiPackage + it }
+def sharedFusionPackage = 'io/github/janguenter/bluemap/resource/fusion/model/'
+def sharedFusionClasses = [
+        'AxisVector.class',
+        'FusionDirection.class',
+        'FusionTextureLayout.class',
+        'FusionTextureSelector$1.class',
+        'FusionTextureSelector.class',
+        'TextureOrientation$1.class',
+        'TextureOrientation$Frame.class',
+        'TextureOrientation.class'
+].collect { sharedFusionPackage + it }
+def sharedFusionSources = [
+        'AxisVector.java',
+        'FusionDirection.java',
+        'FusionTextureLayout.java',
+        'FusionTextureSelector.java',
+        'TextureOrientation.java'
+].collect { sharedFusionPackage + it }
+def approvedSharedClasses = sharedAdapterApiClasses + sharedFusionClasses
+def approvedSharedSources = sharedAdapterApiSources + sharedFusionSources
+def legacyLocalAdapterPackage =
+        'io/github/janguenter/bluemap/rechiseledcreate/adapter/bluemap522/'
+def displacedAdapterHelpers = [
+        'io/github/janguenter/bluemap/rechiseledcreate/adapter/bluemap523/AdapterCompatibility',
+        'io/github/janguenter/bluemap/rechiseledcreate/adapter/bluemap523/RechiseledCreateResourceExtensionType'
+]
+def legacyFusionClasses = [
+        'AxisVector.class',
+        'FusionDirection.class',
+        'FusionTextureSelector$1.class',
+        'FusionTextureSelector.class',
+        'TextureOrientation$1.class',
+        'TextureOrientation$Frame.class',
+        'TextureOrientation.class'
+].collect { 'io/github/janguenter/bluemap/rechiseledcreate/model/' + it }
+def legacyFusionSources = [
+        'AxisVector.java',
+        'FusionDirection.java',
+        'FusionTextureSelector.java',
+        'TextureOrientation.java'
+].collect { 'io/github/janguenter/bluemap/rechiseledcreate/model/' + it }
 tasks.register('verifyAcceptedProductionJar') {
     dependsOn tasks.named('jar')
     inputs.file(productionJar)
@@ -164,10 +230,16 @@ tasks.register('verifyProductionJar') {
                     'META-INF/NOTICE-bluemap-rechiseled-create-addon.md',
                     'META-INF/THIRD_PARTY-bluemap-rechiseled-create-addon.md',
                     'META-INF/bluemap-rechiseled-create/upstreams.json'
-            ]
+            ] + approvedSharedClasses
             def missing = required.findAll { !entries.contains(it) }
-            if (!missing.isEmpty()) {
-                throw new GradleException("Production JAR is missing: ${missing}")
+            def nonUniqueShared = approvedSharedClasses.findAll { shared ->
+                entries.count { it == shared } != 1
+            }
+            if (!missing.isEmpty() || !nonUniqueShared.isEmpty()) {
+                throw new GradleException(
+                        "Production JAR shared boundary mismatch: missing=${missing}, "
+                                + "nonUnique=${nonUniqueShared}"
+                )
             }
             def addon = new groovy.json.JsonSlurper().parseText(
                     zip.getInputStream(zip.getEntry('bluemap.addon.json')).getText('UTF-8')
@@ -179,10 +251,13 @@ tasks.register('verifyProductionJar') {
                     || addon['soft-dependencies'] != []) {
                 throw new GradleException('BlueMap add-on metadata mismatch')
             }
+            def foreignClasses = entries.findAll {
+                it.endsWith('.class')
+                        && !it.startsWith('io/github/janguenter/bluemap/rechiseledcreate/')
+                        && !approvedSharedClasses.contains(it)
+            }
             def forbidden = entries.findAll {
                 it.endsWith('.jar')
-                        || (it.endsWith('.class')
-                        && !it.startsWith('io/github/janguenter/bluemap/rechiseledcreate/'))
                         || it == 'META-INF/neoforge.mods.toml'
                         || it == 'fabric.mod.json'
                         || it.endsWith('.mixins.json')
@@ -196,9 +271,19 @@ tasks.register('verifyProductionJar') {
                         || it.startsWith('de/maxhenkel/')
                         || it.startsWith('net/minecraft/')
                         || it.startsWith('net/neoforged/')
+                        || it.startsWith(legacyLocalAdapterPackage)
+                        || displacedAdapterHelpers.any { helper -> it.startsWith(helper) }
+                        || legacyFusionClasses.contains(it)
+                        || (it.startsWith(sharedAdapterApiPackage)
+                        && !sharedAdapterApiClasses.contains(it))
+                        || (it.startsWith(sharedFusionPackage)
+                        && !sharedFusionClasses.contains(it))
             }
-            if (!forbidden.isEmpty()) {
-                throw new GradleException("Production JAR contains forbidden entries: ${forbidden}")
+            if (!foreignClasses.isEmpty() || !forbidden.isEmpty()) {
+                throw new GradleException(
+                        "Production JAR boundary mismatch: foreignClasses=${foreignClasses}, "
+                                + "forbidden=${forbidden}"
+                )
             }
         } finally {
             zip.close()
@@ -217,7 +302,7 @@ tasks.register('verifySourcesJar') {
             def entries = zip.entries().findAll { !it.directory }.collect { it.name }
             def required = [
                     'io/github/janguenter/bluemap/rechiseledcreate/BlueMapRechiseledCreateAddon.java',
-                    'io/github/janguenter/bluemap/rechiseledcreate/adapter/bluemap522/RechiseledCreateRenderer.java',
+                    'io/github/janguenter/bluemap/rechiseledcreate/adapter/bluemap523/RechiseledCreateRenderer.java',
                     'bluemap.addon.json',
                     'bluemap-rechiseled-create/profiles/exact-artifacts.json',
                     'bluemap-rechiseled-create/profiles/rechiseledcreate/1.1.1-rechiseled-1.2.5-fusion-1.3.12-create-6.0.10/profile.json',
@@ -233,14 +318,21 @@ tasks.register('verifySourcesJar') {
                     'META-INF/NOTICE-bluemap-rechiseled-create-addon.md',
                     'META-INF/THIRD_PARTY-bluemap-rechiseled-create-addon.md',
                     'META-INF/bluemap-rechiseled-create/upstreams.json'
-            ]
+            ] + approvedSharedSources
             def missing = required.findAll { !entries.contains(it) }
-            if (!missing.isEmpty()) {
-                throw new GradleException("Sources JAR is missing: ${missing}")
+            def nonUniqueShared = approvedSharedSources.findAll { shared ->
+                entries.count { it == shared } != 1
+            }
+            if (!missing.isEmpty() || !nonUniqueShared.isEmpty()) {
+                throw new GradleException(
+                        "Sources JAR shared boundary mismatch: missing=${missing}, "
+                                + "nonUnique=${nonUniqueShared}"
+                )
             }
             def projectJava = entries.findAll { it.endsWith('.java') }
             def foreignJava = projectJava.findAll {
                 !it.startsWith('io/github/janguenter/bluemap/rechiseledcreate/')
+                        && !approvedSharedSources.contains(it)
             }
             def forbidden = entries.findAll {
                 it.endsWith('.class')
@@ -255,6 +347,13 @@ tasks.register('verifySourcesJar') {
                         || it.startsWith('de/maxhenkel/')
                         || it.startsWith('net/minecraft/')
                         || it.startsWith('net/neoforged/')
+                        || it.startsWith(legacyLocalAdapterPackage)
+                        || displacedAdapterHelpers.any { helper -> it == "${helper}.java" }
+                        || legacyFusionSources.contains(it)
+                        || (it.startsWith(sharedAdapterApiPackage)
+                        && !sharedAdapterApiSources.contains(it))
+                        || (it.startsWith(sharedFusionPackage)
+                        && !sharedFusionSources.contains(it))
             }
             if (projectJava.isEmpty() || !foreignJava.isEmpty() || !forbidden.isEmpty()) {
                 throw new GradleException(
@@ -269,7 +368,6 @@ tasks.register('verifySourcesJar') {
 }
 
 tasks.named('check').configure {
-    dependsOn tasks.named('verifyAcceptedProductionJar')
     dependsOn tasks.named('verifyProductionJar')
     dependsOn tasks.named('verifySourcesJar')
 }
@@ -293,6 +391,11 @@ tasks.register('verifyPinnedArtifacts', Exec) {
             '--rechiseled', rechiseledJar.getOrElse('missing'),
             '--fusion', fusionJar.getOrElse('missing'),
             '--create', createJar.getOrElse('missing')
+}
+
+tasks.register('prototypeCheck') {
+    dependsOn tasks.named('check')
+    dependsOn tasks.named('verifyPinnedArtifacts')
 }
 
 publishing {

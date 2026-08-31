@@ -13,11 +13,23 @@ forced-disconnected behavior, mechanical-chisel projection, and item-sprite
 extrusion are independently authored for this project.
 
 Geometry, UV-lock, lighting, AO, culling, cave, top-only, map-color, random
-offset, and model-selection mechanics in `FusionModelEmitter` adapt BlueMap
-5.22's MIT `ResourceModelRenderer` at backport commit
-`9be321df995a1103808621d529eb72773e719d4d`. The affected file retains the
+offset, and model-selection mechanics in `FusionModelEmitter` adapt BlueMap's
+MIT `ResourceModelRenderer`. The active ABI target is feature-backport commit
+`7e07f4e74ec1e92a6ead9aa1e66054af3e133aac`, API commit
+`285c9a60eff3ac2b0cab308ce1058d1565be0971`. The affected file retains the
 BlueMap copyright and permission notice; the complete notice is in
 `LICENSE-BlueMap` and both published JAR boundaries.
+
+The current migration removes the duplicated `AxisVector`, `FusionDirection`,
+`FusionTextureSelector`, and `TextureOrientation` implementations. Their exact
+MIT replacements, plus `FusionTextureLayout`, are compiled from released
+Fusion Resource Models `0.1.0-alpha.1` commit
+`3ddd5d39bb7cc8664c242aedd849a636316075c2`, source tree
+`6e85031ff2f0e7417a7a2fb0babbf7ed5a4f218a`. Four narrow 5.23 adapter helpers
+are compiled from Adapter API `0.1.0-alpha.2` commit
+`e81f08bc4bfbf02d810ec8949a019130e2e61634`, source tree
+`2f974c9bb2ba13888d69682f86f30f58922d30eb`. Both source sets are MIT,
+register no consumer IDs by themselves, and are package-audited in both JARs.
 
 ## Runtime inputs
 
@@ -46,9 +58,10 @@ the production/source JARs. The machine-readable record is
 
 ## Release freeze
 
-The owner-accepted implementation commit, production JAR, release sidecars,
+The published alpha.1 implementation commit, production JAR, release sidecars,
 and frozen gallery identities are recorded separately in
 `provenance/release.json`. The implementation-time `upstreams.json` is already
-packaged in the accepted JAR and intentionally remains byte-frozen; changing
-it would change the accepted production artifact. Neither manifest contains
-or redistributes third-party resources.
+packaged in that accepted JAR and intentionally remains byte-frozen. The
+current alpha.2 migration updates `upstreams.json`; its release identities
+remain pending until a new acceptance. Neither manifest contains or
+redistributes third-party resources.
