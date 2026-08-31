@@ -1,7 +1,7 @@
 /*
  * SPDX-License-Identifier: MIT
  */
-package io.github.janguenter.bluemap.rechiseledcreate.adapter.bluemap522;
+package io.github.janguenter.bluemap.rechiseledcreate.adapter.bluemap523;
 
 import de.bluecolored.bluemap.core.util.Key;
 import io.github.janguenter.bluemap.rechiseledcreate.profile.RechiseledCreate111Fusion1312Profile;

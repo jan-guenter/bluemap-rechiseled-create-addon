@@ -1,9 +1,10 @@
 /*
  * SPDX-License-Identifier: MIT
  */
-package io.github.janguenter.bluemap.rechiseledcreate.adapter.bluemap522;
+package io.github.janguenter.bluemap.rechiseledcreate.adapter.bluemap523;
 
-import io.github.janguenter.bluemap.rechiseledcreate.model.FusionTextureSelector;
+import io.github.janguenter.bluemap.resource.fusion.model.FusionTextureLayout;
+import io.github.janguenter.bluemap.resource.fusion.model.FusionTextureSelector;
 import io.github.janguenter.bluemap.rechiseledcreate.profile.TextureLayout;
 import org.junit.jupiter.api.Test;
 
@@ -24,11 +25,15 @@ class FusionModelEmitterTest {
         for (TextureLayout layout : TextureLayout.values()) {
             for (int mask = 0; mask < 256; mask++) {
                 assertEquals(
-                        FusionTextureSelector.tile(layout, 0),
+                        FusionTextureSelector.tile(
+                                FusionTextureLayout.valueOf(layout.name()), 0
+                        ),
                         FusionModelEmitter.selectedTile(layout, mask, true)
                 );
                 assertEquals(
-                        FusionTextureSelector.tile(layout, mask),
+                        FusionTextureSelector.tile(
+                                FusionTextureLayout.valueOf(layout.name()), mask
+                        ),
                         FusionModelEmitter.selectedTile(layout, mask, false)
                 );
             }

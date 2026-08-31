@@ -3,8 +3,18 @@
 pluginManagement {
     def toolkitPath = 'tooling/bluemap-addon-toolkit'
     def expectedToolkitCommit = '6cd34a8368cc4ee8628fbe830a90ec5b14960629'
+    def adapterApiPath = 'modules/bluemap-addon-adapter-api'
+    def expectedAdapterApiCommit = 'e81f08bc4bfbf02d810ec8949a019130e2e61634'
+    def expectedAdapterApiSourceTree = '2f974c9bb2ba13888d69682f86f30f58922d30eb'
+    def fusionModelsPath = 'modules/bluemap-fusion-resource-models'
+    def expectedFusionModelsCommit = '3ddd5d39bb7cc8664c242aedd849a636316075c2'
+    def expectedFusionModelsSourceTree = '6e85031ff2f0e7417a7a2fb0babbf7ed5a4f218a'
     def consumerRoot = settings.settingsDir
     def toolkit = new File(consumerRoot, toolkitPath)
+    def adapterApi = new File(consumerRoot, adapterApiPath)
+    def adapterApiSource = new File(adapterApi, 'src/main/java')
+    def fusionModels = new File(consumerRoot, fusionModelsPath)
+    def fusionModelsSource = new File(fusionModels, 'src/main/java')
 
     if (!(expectedToolkitCommit ==~ /[0-9a-f]{40}/)
             || !new File(consumerRoot, '.git').exists()
@@ -13,6 +23,26 @@ pluginManagement {
         throw new GradleException(
                 'Toolkit trust preflight is not configured or initialized. '
                         + "Run: git submodule update --init --recursive -- ${toolkitPath}"
+        )
+    }
+    if (!(expectedAdapterApiCommit ==~ /[0-9a-f]{40}/)
+            || !(expectedAdapterApiSourceTree ==~ /[0-9a-f]{40}/)
+            || !adapterApi.isDirectory()
+            || !new File(adapterApi, '.git').exists()
+            || !adapterApiSource.isDirectory()) {
+        throw new GradleException(
+                'Adapter API trust preflight is not configured or initialized. '
+                        + "Run: git submodule update --init --recursive -- ${adapterApiPath}"
+        )
+    }
+    if (!(expectedFusionModelsCommit ==~ /[0-9a-f]{40}/)
+            || !(expectedFusionModelsSourceTree ==~ /[0-9a-f]{40}/)
+            || !fusionModels.isDirectory()
+            || !new File(fusionModels, '.git').exists()
+            || !fusionModelsSource.isDirectory()) {
+        throw new GradleException(
+                'Fusion model trust preflight is not configured or initialized. '
+                        + "Run: git submodule update --init --recursive -- ${fusionModelsPath}"
         )
     }
 
@@ -61,6 +91,48 @@ pluginManagement {
         throw new GradleException('Toolkit HEAD differs from the gitlink or is dirty')
     }
 
+    def verifySourceModule = {
+        String path, File repository, String expectedCommit, String expectedSourceTree,
+        String displayName ->
+        def treeEntry = toolkitGitOutput(consumerRoot,
+                ['ls-tree', 'HEAD', '--', path],
+                "read the committed ${displayName} gitlink").tokenize(' \t')
+        def indexEntry = toolkitGitOutput(consumerRoot,
+                ['ls-files', '--stage', '--', path],
+                "read the indexed ${displayName} gitlink").tokenize(' \t')
+        if (treeEntry.size() != 4 || treeEntry[0] != '160000'
+                || treeEntry[1] != 'commit' || treeEntry[2] != expectedCommit
+                || treeEntry[3] != path || indexEntry.size() != 4
+                || indexEntry[0] != '160000' || indexEntry[1] != expectedCommit
+                || indexEntry[2] != '0' || indexEntry[3] != path) {
+            throw new GradleException(
+                    "Committed/indexed ${displayName} gitlink does not match its pin"
+            )
+        }
+
+        def head = toolkitGitOutput(repository,
+                ['rev-parse', '--verify', 'HEAD^{commit}'], "read ${displayName} HEAD")
+        def sourceTree = toolkitGitOutput(repository,
+                ['rev-parse', 'HEAD:src/main/java'], "read ${displayName} source tree")
+        def status = toolkitGitOutput(repository,
+                ['status', '--porcelain=v1', '--untracked-files=all',
+                 '--ignore-submodules=none'], "verify the ${displayName} worktree")
+        if (head != expectedCommit || sourceTree != expectedSourceTree || !status.isEmpty()) {
+            throw new GradleException(
+                    "${displayName} HEAD/source tree differs from the pin or is dirty"
+            )
+        }
+    }
+
+    verifySourceModule(
+            adapterApiPath, adapterApi, expectedAdapterApiCommit,
+            expectedAdapterApiSourceTree, 'Adapter API'
+    )
+    verifySourceModule(
+            fusionModelsPath, fusionModels, expectedFusionModelsCommit,
+            expectedFusionModelsSourceTree, 'Fusion model'
+    )
+
     def gradleBuild = new File(toolkit, 'gradle')
     if (!new File(gradleBuild, 'settings.gradle').isFile()) {
         throw new GradleException('Pinned toolkit has no Gradle convention build')
@@ -75,7 +147,7 @@ pluginManagement {
 
 rootProject.name = 'bluemap-rechiseled-create-addon'
 
-def expectedBlueMapCommit = '9be321df995a1103808621d529eb72773e719d4d'
+def expectedBlueMapCommit = '7e07f4e74ec1e92a6ead9aa1e66054af3e133aac'
 def expectedBlueMapApiCommit = '285c9a60eff3ac2b0cab308ce1058d1565be0971'
 def blueMapSourcePath = providers.gradleProperty('bluemapSourcePath')
         .getOrElse('../bluemap-backport')
@@ -94,14 +166,14 @@ def gitOutput = { File repository, String... arguments ->
     }.standardOutput.asText.get().trim()
 }
 
-def blueMapHead = gitOutput(blueMapSource, 'rev-parse', 'HEAD')
+def blueMapHead = gitOutput(blueMapSource, 'rev-parse', '--verify', 'HEAD^{commit}')
 if (blueMapHead != expectedBlueMapCommit) {
     throw new GradleException(
             "Refusing BlueMap ${blueMapHead}; expected ${expectedBlueMapCommit}"
     )
 }
 def blueMapApiSource = new File(blueMapSource, 'api')
-def blueMapApiHead = gitOutput(blueMapApiSource, 'rev-parse', 'HEAD')
+def blueMapApiHead = gitOutput(blueMapApiSource, 'rev-parse', '--verify', 'HEAD^{commit}')
 if (blueMapApiHead != expectedBlueMapApiCommit) {
     throw new GradleException(
             "Refusing BlueMapAPI ${blueMapApiHead}; expected ${expectedBlueMapApiCommit}"

@@ -3,7 +3,7 @@
  */
 package io.github.janguenter.bluemap.rechiseledcreate.activation;
 
-import io.github.janguenter.bluemap.rechiseledcreate.adapter.bluemap522.FusionProgramCatalog;
+import io.github.janguenter.bluemap.rechiseledcreate.adapter.bluemap523.FusionProgramCatalog;
 
 /** Process-scoped state for the exact Rechiseled: Create bridge route. */
 public final class RechiseledCreateRuntime {

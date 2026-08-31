@@ -29,7 +29,7 @@
  * sheet selection, and UV clipping are independently authored from the exact
  * installed schema and observable behavior. See docs/PROVENANCE.md.
  */
-package io.github.janguenter.bluemap.rechiseledcreate.adapter.bluemap522;
+package io.github.janguenter.bluemap.rechiseledcreate.adapter.bluemap523;
 
 import com.flowpowered.math.TrigMath;
 import com.flowpowered.math.vector.Vector3f;
@@ -56,10 +56,11 @@ import de.bluecolored.bluemap.core.world.BlockState;
 import de.bluecolored.bluemap.core.world.LightData;
 import de.bluecolored.bluemap.core.world.block.BlockNeighborhood;
 import de.bluecolored.bluemap.core.world.block.ExtendedBlock;
-import io.github.janguenter.bluemap.rechiseledcreate.model.AxisVector;
-import io.github.janguenter.bluemap.rechiseledcreate.model.FusionDirection;
-import io.github.janguenter.bluemap.rechiseledcreate.model.FusionTextureSelector;
-import io.github.janguenter.bluemap.rechiseledcreate.model.TextureOrientation;
+import io.github.janguenter.bluemap.resource.fusion.model.AxisVector;
+import io.github.janguenter.bluemap.resource.fusion.model.FusionDirection;
+import io.github.janguenter.bluemap.resource.fusion.model.FusionTextureLayout;
+import io.github.janguenter.bluemap.resource.fusion.model.FusionTextureSelector;
+import io.github.janguenter.bluemap.resource.fusion.model.TextureOrientation;
 import io.github.janguenter.bluemap.rechiseledcreate.profile.RechiseledCreate111Fusion1312Profile;
 import io.github.janguenter.bluemap.rechiseledcreate.profile.TextureCatalog;
 import io.github.janguenter.bluemap.rechiseledcreate.profile.TextureLayout;
@@ -105,7 +106,7 @@ final class FusionModelEmitter {
         this.textureGallery = textureGallery;
         this.renderSettings = renderSettings;
         this.blockColorCalculator = resourcePack.createBlockColorCalculator();
-        this.extension = BlueMap522Adapter.extension(resourcePack);
+        this.extension = BlueMap523Adapter.extension(resourcePack);
     }
 
     boolean render(
@@ -240,7 +241,9 @@ final class FusionModelEmitter {
             int mask,
             boolean disconnected
     ) {
-        return FusionTextureSelector.tile(layout, disconnected ? 0 : mask);
+        return FusionTextureSelector.tile(
+                FusionTextureLayout.valueOf(layout.name()), disconnected ? 0 : mask
+        );
     }
 
     private boolean emitPieced(
